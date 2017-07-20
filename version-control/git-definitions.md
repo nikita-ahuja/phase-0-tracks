@@ -1,4 +1,5 @@
 # Git Definitions
+## Nikita Ahuja, Red Pandas Cohort 2017
 
 **Instructions: ** Define each of the following Git concepts.
 
@@ -16,3 +17,4 @@ A commit is what you do when you record your changes to a repository. A good com
 
 * What is a merge conflict?
 A merge conflict occurs when merging new code or pulling from a branch into the master branch. It may occur because the codes may not align or are incompatible with each other.
+
