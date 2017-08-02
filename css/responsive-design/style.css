@@ -12,6 +12,10 @@ cite {
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
+  width: 200px;
+  display: inline-block;
+  vertical-align: top;
+
 }
 
 /* you're welcome to edit the
@@ -32,5 +36,12 @@ figcaption {
 }
 
 body {
-  width: 960px;
+  max-width: 960px;
 }
+
+main {
+  width: 20%;
+  display: inline-block;
+  vertical-align: length 10px;
+}
+
