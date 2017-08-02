@@ -53,3 +53,14 @@ main {
   }
 } use media query as syntax reference*/
 
+/*@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+} use media query as syntax reference*/
+
+@media screen and (max-width: 500px) {
+  main {
+    font-size: 10px;
+  }
+} 
