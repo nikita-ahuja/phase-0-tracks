@@ -1,10 +1,10 @@
 .octopus {
   /*outline: 1px solid red; used for debugging*/
+  position: absolute; 
   margin-top: 200px;
   margin-left:200px;
   margin-right:200px;
   margin-bottom: 50px;
-  position: absolute; 
 
 }
 
@@ -12,7 +12,6 @@
   position:absolute; 
   margin-left: 180px;
   margin-top: 100px;
-  z-index: 2
 
 }
 
@@ -20,7 +19,7 @@
   position:absolute;
   margin-top: 300px;
   margin-left: 240px;
-  z-index: 3; /*should be on top*/
+  z-index: 1; /*should be on top*/
 
 
 }
