@@ -15,6 +15,9 @@ cite {
   width: 200px;
   display: inline-block;
   vertical-align: top;
+  position: absolute;
+  top: 0px;
+  right: 0;
 
 }
 
