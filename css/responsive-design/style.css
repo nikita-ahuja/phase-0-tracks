@@ -15,6 +15,18 @@ cite {
   width: 200px;
   display: inline-block;
   vertical-align: top;
+  position: fixed;
+  top: 25px;
+  right: 0;
+  text-align: right;
+
+}
+
+#external-links h1 {
+  position: fixed;
+  top: 0px;
+  right: 0;
+}
 
 }
 
@@ -44,6 +56,8 @@ main {
   display: inline-block;
   vertical-align: length 10px;
   min-width: 5px;
+  position: absolute;
+  width: 10px;
 }
 
 
