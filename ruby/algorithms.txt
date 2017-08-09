@@ -1,0 +1,59 @@
+Elevator Algorithm:
+
+-If the floor you are on is lower than the floor you need to go to:
+	i. Press the up button (denoted by an up arrow, generally placed along the same wall as the elevators) by lifting your arm up, putting your pointer finger out, navigating your finger to the button, and pushing the tip of your pointer finger against the up button until it lights up.
+
+-If the floor you are on is higher than the floor you need to go to:
+	i. Press the down button (denoted by an up arrow, generally placed along the same wall as the elevators) by lifting your arm up, putting your pointer finger out, navigating your finger to the button, and pushing the tip of your pointer finger against the down button until it lights up.
+
+-Wait until a light and/or goes off above one of the elevators.
+
+-Navigate to the elevator that is associated with the light and/or sound.
+
+-Wait for the doors to open.
+
+-If there are people exiting the elevator:
+	i. step aside to allow them to get out by lifting your feet us and moving them to the left or right of the elevator.
+	ii. Once all the people who intend to leave have cleared, step in before the door closes by lifting up each leg and placing your feet one in front of the other in the direction of the elevator. 
+
+-Once you are in the elevator, you must make sure the elevator will navigate to your intended floor’s button before the doors shut by either:
+	-Moving your eyes to the wall with the buttons of numbers and assuring yours has been chosen already. It should be obvious and be lit up.
+	-Pressing the button yourself using the same technique you used to press the up or down buttons before you entered the elevator.
+
+
+-Once the doors shut, the elevator will begin to move to the floors which have lit up buttons. Exit the elevator when it reaches your floor. You will know this when the light on your chosen floor’s button goes away and the door’s open.
+
+-Once the doors open and the light on your floor button has gone away, it is safe to exit the elevator. Exit using the same technique you used to enter the elevator.
+
+
+Get ready to go to gym:
+
+-When it is 5:30 PM, stop coding.
+-Stand up.
+-Go to the brown dresser opposite your bed.
+-Open the middle drawer.
+-Pick out a workout t-shirt.
+	i. This is anything with two sleeves and a torsoe cover.
+-Take out shorts.
+-Change out of current clothes into newly chosen workout clothes.
+-Place non-workout clothes that I was previously wearing into hamper by walking into the bathroom with non-workout clothes in hand and dropping them in the hamper.
+-Turn around and look in mirror.
+-Place hands on head grabbing hair.
+-Put hair in a bun.
+-Navigate to closet, on the wall opposite the bathroom.
+-Enter closet and open bottom drawer of plastic dresser drawer.
+-Look for a pair of socks and take them out. 
+-Separate them from each other.
+-Place one sock on the ground. Keep the other in hand.
+Until both feet have socks on them:
+	-With one sock in hand, place it on one foot.
+-Go downstairs.
+-Navigate to shoe closet and open shoe closet door.
+-Take out bright yellow running shoes.
+-Place both shoes on the floor.
+Until both shoes are on and tied:
+	-While standing, put one foot in the appropriate shoe.
+	-Bend down and tie the shoe.
+
+You are now officially ready to go to the gym!
+
