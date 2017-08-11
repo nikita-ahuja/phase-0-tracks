@@ -24,7 +24,7 @@ until i == users
   puts "Would you like to enroll in the company's health insurance? (y/n)"
   insurance = gets.chomp
 
-  puts "Please name any allergies. Type the word done if there are none."
+  puts "Please name any allergies one by one. Type the word done if there are none."
   allergy=gets.chomp
 
   i=0
@@ -36,6 +36,8 @@ until i == users
 
 if name == "Drake Cula" || name == "Tu Fang"
   puts "Definitely a vampire."
+elsif allergy == "sunshine" || allergy == "Sunshine"
+  puts "Probably a vampire."
 elsif (CURRENT_YEAR - birth_year) == age && garlic_bread == "y"
     puts "Probably not a vampire."
 elsif (CURRENT_YEAR - birth_year) != age && garlic_bread == "n"
@@ -49,7 +51,7 @@ end #end the if statement
 i += 1 #increase iteration by 1
 end #end the until loop
 
-# PSEUDOCODE FOR LOOP:
+# PSEUDOCODE FOR Full Survey LOOP:
 # Ask how many users will be processed - done
 # Run through the whole survey - done
 # Print the results for survey - done
