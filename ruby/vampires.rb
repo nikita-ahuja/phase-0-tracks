@@ -3,9 +3,11 @@ users = gets.chomp.to_i
 
 CURRENT_YEAR = 2017.to_i #constant
 
-i = 0
+i = 0 # initially, we begin at 0 iterations
 
 until i == users
+
+  puts "Survey for Employee number #{i + 1}"
 
   puts "What is your name?"
   name = gets.chomp
@@ -32,10 +34,10 @@ elsif (CURRENT_YEAR - birth_year) != age && garlic_bread == "n" && insurance == 
     puts "Almost certainly a vampire."
 else
     puts "Results inconclusive."
-    end
+end #end the if statement
 
-i += 1
-end
+i += 1 #increase iteration by 1
+end #end the until loop
 
 # PSEUDOCODE FOR LOOP:
 # Ask how many users will be processed - done
