@@ -24,6 +24,16 @@ until i == users
   puts "Would you like to enroll in the company's health insurance? (y/n)"
   insurance = gets.chomp
 
+  puts "Please name any allergies. Type the word done if there are none."
+  allergy=gets.chomp
+
+  i=0
+  while allergy != "done"
+    puts "Please name any allergies. Type the word done if there are no more."
+    allergy = gets.chomp
+  i += 1
+  end
+
 if name == "Drake Cula" || name == "Tu Fang"
   puts "Definitely a vampire."
 elsif (CURRENT_YEAR - birth_year) == age && garlic_bread == "y"
