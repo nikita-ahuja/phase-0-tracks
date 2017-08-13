@@ -2,10 +2,7 @@
 
 # An encrypt method that advances every letter of a string one letter forward. So "abc" would become "bcd". For now, you can assume lowercase input and output. Any space character should remain a space character -- no change made.
 
-
-def encrypt(string)
-# prompt the user to type a string
-#puts "Please type a string"
+def encrypt(string) #define an encryption method with a string as an argument
 
 index = 0
 #string = gets.chomp
@@ -18,8 +15,8 @@ while index < string.length
   index += 1
 end
 
-puts string
-return string
+puts string #print string
+return string #return string in order to allow for nested methods
 
 end
 
@@ -30,12 +27,13 @@ end
 
 
 def decrypt(string) #take a string as an argument
-#make each letter to transform into the letter before it in the alphabet
+#make each letter to transform into the letter before it in the ALPHABET
 
 alpha = "abcdefghijklmnopqrstuvwxyz"
 index = 0
 #new_character = alpha[((alpha.index(string[index])-1))]
 
+#cycle through each character
 while index < string.length
   string[index] = alpha[((alpha.index(string[index])-1))]
   index += 1
@@ -45,5 +43,17 @@ puts string
 return string
 
 end
+
+puts "Would you like to decrypt or encrypt a password?"
+decrypt_or_encrypt = gets.chomp
+puts "What is the password?"
+password = gets.chomp
+
+if decrypt_or_encrypt == "decrypt"
+  decrypt(password) #take the password variable as an argument
+else
+  encrypt(password)
+end
+
 
 #decrypt(encrypt("swordfish")) cycles through both methods, first the innermost nested method - the encrypt method - returning and printing the string "txpsegjti". Since this function returns a string, this means it is also a valid argument for the outermost function, the encrypt function. It then inserts this string as the argument to the decrypt function, which performs the code on the string reverting it back to the original string, "swordfish."
