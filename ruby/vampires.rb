@@ -31,12 +31,12 @@ until i == users
   while allergy != "done"
     puts "Please name any allergies. Type the word done if there are no more."
     allergy = gets.chomp
-  counter += 1
-      if allergy == "sunshine"
-        puts "Probably a vampire."
-        break
-      end
-  end
+    if allergy == "sunshine"
+      break
+      puts "Probably a vampire."
+    else counter += 1
+    end #end the if statement
+  end #end the while loop
 
 if name == "Drake Cula" || name == "Tu Fang"
   puts "Definitely a vampire."
@@ -54,6 +54,11 @@ end #end the if statement
 
 i += 1 #increase iteration by 1
 end #end the until loop
+
+
+
+
+
 
 # PSEUDOCODE FOR Full Survey LOOP:
 # Ask how many users will be processed - done
