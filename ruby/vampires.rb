@@ -27,17 +27,21 @@ until i == users
   puts "Please name any allergies one by one. Type the word done if there are none."
   allergy=gets.chomp
 
-  i=0
+  counter=0
   while allergy != "done"
     puts "Please name any allergies. Type the word done if there are no more."
     allergy = gets.chomp
-  i += 1
-  end
+    if allergy == "sunshine"
+      break
+      puts "Probably a vampire."
+    else counter += 1
+    end #end the if statement
+  end #end the while loop
 
 if name == "Drake Cula" || name == "Tu Fang"
   puts "Definitely a vampire."
-elsif allergy == "sunshine" || allergy == "Sunshine"
-  puts "Probably a vampire."
+#elsif allergy == "sunshine" || allergy == "Sunshine"
+  #puts "Probably a vampire."
 elsif (CURRENT_YEAR - birth_year) == age && garlic_bread == "y"
     puts "Probably not a vampire."
 elsif (CURRENT_YEAR - birth_year) != age && garlic_bread == "n"
@@ -50,6 +54,13 @@ end #end the if statement
 
 i += 1 #increase iteration by 1
 end #end the until loop
+
+p  "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
+
+
+
+
+
 
 # PSEUDOCODE FOR Full Survey LOOP:
 # Ask how many users will be processed - done
