@@ -35,7 +35,7 @@ def decrypt(string)
 #take a string as an argument
 #make each letter to transform into the letter before it in the alphabet
 
-alpha = "abcdefghijklmnopqrstuvqxyz"
+alpha = "abcdefghijklmnopqrstuvwxyz"
 index = 0
 #new_character = alpha[((alpha.index(string[index])-1))]
 
