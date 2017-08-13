@@ -49,3 +49,5 @@ puts string
 return string
 
 end
+
+#decrypt(encrypt("swordfish")) cycles through both methods, first the innermost nested method - the encrypt method - returning and printing the string "txpsegjti". Since this function returns a string, this means it is also a valid argument for the outermost function, the encrypt function. It then inserts this string as the argument to the decrypt function, which performs the code on the string reverting it back to the original string, "swordfish."
