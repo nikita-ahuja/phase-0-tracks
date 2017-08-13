@@ -14,7 +14,7 @@ index = 0
 # loop through each individual character
 while index < string.length
   # using the "next" function
-  string[index] = string[index].next!
+  string[index] = string[index].next
   index += 1
 end
 
