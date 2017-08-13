@@ -46,5 +46,6 @@ while index < string.length
 end
 
 puts string
+return string
 
 end
