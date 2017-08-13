@@ -44,16 +44,32 @@ return string
 
 end
 
+valid_input = false
+until valid_input
+
 puts "Would you like to decrypt or encrypt a password?"
 decrypt_or_encrypt = gets.chomp
-puts "What is the password?"
-password = gets.chomp
 
 if decrypt_or_encrypt == "decrypt"
-  decrypt(password) #take the password variable as an argument
+  valid_input = true
+elsif decrypt_or_encrypt == "encrypt"
+  valid_input = true
 else
+  puts "Please enter either decrypt or encrypt."
+end #end conditional statement
+
+
+if decrypt_or_encrypt == "decrypt" && valid_input = true
+  puts "What is the password?"
+  password = gets.chomp
+  decrypt(password) #take the password variable as an argument
+elsif decrypt_or_encrypt == "encrypt" && valid_input = true
+  puts "What is the password?"
+  password = gets.chomp
   encrypt(password)
-end
+end #end if statement
+
+end #end until loop
 
 
 #decrypt(encrypt("swordfish")) cycles through both methods, first the innermost nested method - the encrypt method - returning and printing the string "txpsegjti". Since this function returns a string, this means it is also a valid argument for the outermost function, the encrypt function. It then inserts this string as the argument to the decrypt function, which performs the code on the string reverting it back to the original string, "swordfish."
