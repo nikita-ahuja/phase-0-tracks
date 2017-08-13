@@ -27,11 +27,11 @@ until i == users
   puts "Please name any allergies one by one. Type the word done if there are none."
   allergy=gets.chomp
 
-  i=0
+  counter=0
   while allergy != "done"
     puts "Please name any allergies. Type the word done if there are no more."
     allergy = gets.chomp
-  i += 1
+  counter += 1
       if allergy == "sunshine"
         puts "Probably a vampire."
         break
