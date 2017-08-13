@@ -27,7 +27,7 @@ end
 
 
 def decrypt(string) #take a string as an argument
-#make each letter to transform into the letter before it in the alphabet
+#make each letter to transform into the letter before it in the ALPHABET
 
 alpha = "abcdefghijklmnopqrstuvwxyz"
 index = 0
@@ -50,7 +50,7 @@ puts "What is the password?"
 password = gets.chomp
 
 if decrypt_or_encrypt == "decrypt"
-  decrypt(password) #take the password as an argument
+  decrypt(password) #take the password variable as an argument
 else
   encrypt(password)
 end
