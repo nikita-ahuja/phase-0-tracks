@@ -32,12 +32,16 @@ until i == users
     puts "Please name any allergies. Type the word done if there are no more."
     allergy = gets.chomp
   i += 1
+      if allergy == "sunshine"
+        puts "Probably a vampire."
+        break
+      end
   end
 
 if name == "Drake Cula" || name == "Tu Fang"
   puts "Definitely a vampire."
-elsif allergy == "sunshine" || allergy == "Sunshine"
-  puts "Probably a vampire."
+#elsif allergy == "sunshine" || allergy == "Sunshine"
+  #puts "Probably a vampire."
 elsif (CURRENT_YEAR - birth_year) == age && garlic_bread == "y"
     puts "Probably not a vampire."
 elsif (CURRENT_YEAR - birth_year) != age && garlic_bread == "n"
