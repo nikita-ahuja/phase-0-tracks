@@ -28,8 +28,8 @@ until i == users
   allergy=gets.chomp
     if allergy == "sunshine"
       puts "Probably a vampire."
-    end
-    exit
+      puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
+      break
 
     while allergy != "done"
       puts "Please name anymore allergies one by one. Type the word done if there are no more."
@@ -57,6 +57,9 @@ i += 1 #increase iteration by 1
 end #end the until loop
 
 p  "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
+
+exit
+
 
 
 
