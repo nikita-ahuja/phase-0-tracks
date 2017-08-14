@@ -24,19 +24,19 @@ until i == users
   puts "Would you like to enroll in the company's health insurance? (y/n)"
   insurance = gets.chomp
 
-  #puts "Please name any allergies one by one. Type the word done if there are none."
-  #allergy=gets.chomp
-
-  #counter=0
-  while allergy != "done"
-    puts "Please name any allergies. Type the word done if there are no more."
-    allergy = gets.chomp
-    if allergy == "sunshine"
-      break
-      puts "Probably a vampire."
-    #else counter += 1
-    end #end the if statement
-  end #end the while loop
+  puts "Please name any allergies one by one. Type the word done if there are none."
+  allergy=gets.chomp
+  if allergy == "sunshine"
+    puts "Probably a vampire."
+  end
+    while allergy != "done"
+      puts "Please name anymore allergies one by one. Type the word done if there are no more."
+      allergy = gets.chomp
+      if allergy == "sunshine"
+        break puts "Probably a vampire."
+      #else counter += 1
+      end #end the if statement
+    end #end the while loop
 
 if name == "Drake Cula" || name == "Tu Fang"
   puts "Definitely a vampire."
