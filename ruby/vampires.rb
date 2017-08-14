@@ -24,8 +24,8 @@ until i == users
   puts "Would you like to enroll in the company's health insurance? (y/n)"
   insurance = gets.chomp
 
-  puts "Please name any allergies one by one. Type the word done if there are none."
-  allergy=gets.chomp
+  #puts "Please name any allergies one by one. Type the word done if there are none."
+  #allergy=gets.chomp
 
   #counter=0
   while allergy != "done"
