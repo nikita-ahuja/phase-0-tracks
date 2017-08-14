@@ -59,11 +59,11 @@ else
 end #end conditional statement
 
 
-if decrypt_or_encrypt == "decrypt" && valid_input = true
+if decrypt_or_encrypt == "decrypt" && valid_input == true
   puts "What is the password?"
   password = gets.chomp
   decrypt(password) #take the password variable as an argument
-elsif decrypt_or_encrypt == "encrypt" && valid_input = true
+elsif decrypt_or_encrypt == "encrypt" && valid_input == true
   puts "What is the password?"
   password = gets.chomp
   encrypt(password)
