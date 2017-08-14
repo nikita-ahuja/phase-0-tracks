@@ -26,15 +26,16 @@ until i == users
 
   puts "Please name any allergies one by one. Type the word done if there are none."
   allergy=gets.chomp
-  if allergy == "sunshine"
-    puts "Probably a vampire."
-  end
+    if allergy == "sunshine"
+      puts "Probably a vampire."
+    end
+    exit
+
     while allergy != "done"
       puts "Please name anymore allergies one by one. Type the word done if there are no more."
       allergy = gets.chomp
-      if allergy == "sunshine"
-        break puts "Probably a vampire."
-      #else counter += 1
+      #if allergy == "sunshine"
+        #break puts "Probably a vampire."
       end #end the if statement
     end #end the while loop
 
