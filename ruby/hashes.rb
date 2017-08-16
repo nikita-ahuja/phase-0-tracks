@@ -34,6 +34,10 @@ puts "What is the client's favorite color?"
 fav_color = gets.chomp
 design_form[:fav_color] = fav_color
 
+puts "How did the client hear about our services?"
+reference = gets.chomp
+design_form[:reference] = reference
+
 puts design_form
 
 puts "After reviewing the form, are there any values you would you like to update? If so, enter the key name, or enter 'none' if there are not any values you need to update."
@@ -45,11 +49,12 @@ if update_key != "none"
   puts "What is the new or updated value for #{update_key}?"
   new_value = gets.chomp
   design_form[update_key] = new_value
+  p design_form
 else
-  break
+  puts "Great, we are all done!"
+  exit
 end
 
-p design_form
 
 
 
@@ -62,8 +67,8 @@ p design_form
 # - each of these answers will be updated and added to the hash
 # 3. Print the form back out to the user for review
 # 4. Ask the user if there are any values they would like to update
-# - provide a list of key's for the user to reference
-# 5. Unless the user says "none", skip this.
+# 5. If the user says "none", skip this part.
+# -You are done.
 # 6. If the user enters a key name, ask for a new value.
 # 7. After the user enters the value, update the key with the new value.
 # 8. Print the final version of the form
