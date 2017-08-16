@@ -8,6 +8,48 @@
 
 
 
+design_form = {}
+
+puts "Enter client's name:"
+name = gets.chomp
+design_form[:name] = name
+
+puts "Enter client's age:"
+age = gets.chomp.to_i
+design_form[:age] = age
+
+puts "Enter the amount of children client has:"
+children = gets.chomp.to_i
+design_form[:children] = children
+
+puts "Will the client be available on weekends? (y/n)"
+weekend_availability = gets.chomp
+if weekend_availability == "y"
+  design_form[:weekend_availability] = true
+else
+  design_form[:weekend_availability] = false
+end
+
+puts "What is the client's favorite color?"
+fav_color = gets.chomp
+design_form[:fav_color] = fav_color
+
+puts design_form
+
+puts "After reviewing the form, are there any values you would you like to update? If so, enter the key name, or enter 'none' if there are not any values you need to update."
+
+update_key = gets.chomp
+
+if update_key != "none"
+  update_key = update_key.to_sym
+  puts "What is the new or updated value for #{update_key}?"
+  new_value = gets.chomp
+  design_form[update_key] = new_value
+else
+  break
+end
+
+p design_form
 
 
 
