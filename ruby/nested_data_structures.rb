@@ -20,7 +20,11 @@ personal_care: {
   shampoo_condit: ["Garnier Fructisse", "Pantene Pro-V", "Dove"],
   makeup: ["lipstick", "nail polish", "eyeshadow"],
   face_wash: ["Cerave", "Clearasil Ultra", "Cetaphil"],
+meds: {
+  pain_relievers: ["Advil", "Tylenol", "Ibuprofen"],
+  antihistamines: ["Claritin", "Allegra-D"]
   }
+}
 }
 
 p grocery_store
