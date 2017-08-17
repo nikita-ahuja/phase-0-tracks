@@ -12,12 +12,28 @@ cities_in_texas = ["Austin", "Houston", "Dallas"]
 puts "This is the array before modification:"
 p cities_in_texas
 
-#modify array
-cities_in_texas.map! do |city|
-  puts city.downcase + "!"
+#modify array with .each
+cities_in_texas.each do |city|
+  puts "#{city} is a city in Texas"
 end
 
-#after print
+p cities_in_texas
+
+
+#modify array with .map!
+#cities_as_a_sentence = ""
+cities_downcase = cities_in_texas.map do |city|
+  city.downcase
+end
+
+p cities_downcase
+p cities_in_texas
+
+#print after .map! modification
+cities_in_texas.map! do |city|
+  city.downcase
+end
+
 puts "This is the array after modification:"
 p cities_in_texas
 
@@ -39,3 +55,4 @@ state_capitals.each do |state, capital|
 end
 
 p state_capitals
+
