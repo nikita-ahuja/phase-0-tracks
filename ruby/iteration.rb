@@ -56,3 +56,8 @@ end
 
 p state_capitals
 
+
+words = ["cat", "dog", "hat", "hit"]
+words.each.delete_if(|item| words[item][-1] != "t")
+
+p words
