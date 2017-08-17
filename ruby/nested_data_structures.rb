@@ -14,43 +14,26 @@ grocery_store = {
     boxed: ["Honey Bunches", "Cheerios", "Kellogs"]
   },
 #SNACKS
-snacks: ["almonds", "chips", "rice cakes"],
-#COSMETICS
-personal_care: {
-  shampoo_condit: ["Garnier Fructisse", "Pantene Pro-V", "Dove"],
-  makeup: ["lipstick", "nail polish", "eyeshadow"],
-  face_wash: ["Cerave", "Clearasil Ultra", "Cetaphil"],
-meds: {
-  pain_relievers: ["Advil", "Tylenol", "Ibuprofen"],
-  antihistamines: ["Claritin", "Allegra-D"]
+  snacks: ["almonds", "chips", "rice cakes"],
+#
+  personal_care: {
+    shampoo_condit: ["Garnier Fructisse", "Pantene Pro-V", "Dove"],
+    makeup: ["lipstick", "nail polish", "eyeshadow"],
+    face_wash: ["Cerave", "Clearasil Ultra", "Cetaphil"],
+
+    meds: {
+      pain_relievers: ["Advil", "Tylenol", "Ibuprofen"],
+      antihistamines: ["Claritin", "Allegra-D"]
+    }
   }
-}
 }
 
 p grocery_store
 
-# holiday_supplies = {
-#   "winter" => {
-#     "Christmas" => ["lights", "tree"],
-#     "New Years" => "champagne glasses"
-#   },
-#   "summer" => {
-#     "July Fourth" => ["BBQ", "flags"]
-#   },
-#   "spring" => {
-#     "Memorial Day" => "BBQ"
-#   },
-#   "fall" => {
-#     "Labor Day" => "hot dogs"
-#   }
-# }
+p grocery_store[:dairy_section][2]
+p grocery_store[:personal_care][:makeup]
+p grocery_store[:cereal][:oats][1] = "Steel Cut Oats"
+p grocery_store[:snacks].unshift("granola bars")
+p grocery_store[:personal_care][:face_wash].shift
 
-# p holiday_supplies
-
-
-produce_section = {
-  fruit: ["apples", "oranges", "dragonfruit"],
-  vegetables: ["cucumbers", "tomatoes", "celery"]
-}
-
-p produce_section
+p grocery_store #show changes
