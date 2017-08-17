@@ -56,21 +56,21 @@ end
 
 p state_capitals
 
-#1 - delete after meeting certain condition
+#1 array - delete after meeting certain condition
 words = ["cat", "dog", "hat", "hit"]
 
 words.delete_if {|item| item[-1] != "t"}
 
 p words
 
-#2 - keep after meeting certain conditions
+#2 array - keep after meeting certain conditions
 words = ["cat", "dog", "hat", "hit"]
 
 words.keep_if {|item| item[-1] != "t"}
 
 p words
 
-#3 - filter data satisfying certain condition (select v select!)
+#3 array - filter data satisfying certain condition (select v select!)
 words = ["cat", "dog", "hat", "hit"]
 
 new_words = words.select {|item| item[0] != "h"}
@@ -79,12 +79,40 @@ p words
 p new_words
 
 
-#4 - removing until block evaluates false, then stop
+#4 array - removing until block evaluates false, then stop
 words = ["cat", "dog", "hat", "hit"]
 taken_words = words.take_while {|item| item[-1] == "t"}
 
 p words
 p taken_words
+
+#1 hash - delete after meeting certain condition (delete_if)
+
+numbers = {
+  "1" => "a",
+  "2" => "b",
+  "3" => "c",
+  "4" => "d",
+  "5" => "e",
+}
+
+numbers.delete_if {|digit, letter| digit.to_i.even?}
+
+p numbers
+
+
+#2 hash - keep after meeting certain conditions (keep_if)
+
+numbers = {
+  "1" => "a",
+  "2" => "b",
+  "3" => "c",
+  "4" => "d",
+  "5" => "e",
+}
+
+
+#3 hash - filter data satisfying certain condition (select v select!)
 
 
 
