@@ -33,5 +33,9 @@ state_capitals = {
 puts "This is the hash before modification:"
 p state_capitals
 
-
 #modify hash
+state_capitals.each do |state, capital|
+  puts "#{capital} is the capital of #{state}"
+end
+
+p state_capitals
