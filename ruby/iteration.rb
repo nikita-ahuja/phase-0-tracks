@@ -79,7 +79,7 @@ p words
 p new_words
 
 
-#4 array - removing until block evaluates false, then stop
+#4 array - removing until block evaluates false, then stop (.take_while)
 words = ["cat", "dog", "hat", "hit"]
 taken_words = words.take_while {|item| item[-1] == "t"}
 
@@ -111,8 +111,22 @@ numbers = {
   "5" => "e",
 }
 
+numbers.keep_if {|digit, letter| digit.to_i.even?}
+
+p numbers
+
 
 #3 hash - filter data satisfying certain condition (select v select!)
 
+numbers = {
+  "1" => "a",
+  "2" => "b",
+  "3" => "c",
+  "4" => "d",
+  "5" => "e",
+}
 
+numbers.select! {|digit, letter| digit.to_i.even?}
+
+p numbers
 
