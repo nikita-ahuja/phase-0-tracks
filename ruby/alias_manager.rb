@@ -39,19 +39,21 @@ def consonant_change(real_name)
     end
   end
   #p real_name.join
-  return real_name.join
+  return real_name.join.capitalize
 end
 
 
 def full_name_change()
-  unless real_name == "quit"
-    puts "Enter a name (type quit to end):"
-    real_name = gets.chomp
-    consonant_change(vowel_change(swap_name(real_name)))
+  puts "Enter a name (type 'quit' to end):"
+  real_name = gets.chomp
+  while real_name != "quit" do
+      puts "The fake name is" + " " + consonant_change(vowel_change(swap_name(real_name)))
+      puts "Enter a name (type quit to end):"
+      real_name = gets.chomp
   end
 end
 
-p full_name_change()
+full_name_change()
 
 
 
