@@ -56,7 +56,6 @@ end
 full_name_change()
 
 
-
 # SWAP NAME PSEUDOCODE
 # 1. Define a method that take the full real name
 # 2. using the split function for strings, split the full name into an array with two indexes
