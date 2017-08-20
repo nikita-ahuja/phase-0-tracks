@@ -13,6 +13,8 @@ def vowel_change(real_name)
     if vowels.include?(letter)
       letter = vowels.rotate[vowels.index(letter)]
       #rotate 1 to the right from the letter in the vowels array
+      #no argument in rotate method implies moving to the right 1 character
+      #vowels.index(letter) finds the INDEX of the letter from real_name that is a vowel in the VOWEL ARRAY. Then, because of the rotate method, the index value moves to the right 1 in the VOWELS ARRAY to get the next letter in that array and replace it with the letter in real_name that is the vowel.
     else
       letter = letter
     end
@@ -41,29 +43,16 @@ def consonant_change(real_name)
 end
 
 
-def full_name_change(real_name)
-  consonant_change(vowel_change(swap_name(real_name)))
+def full_name_change()
+  unless real_name == "quit"
+    puts "Enter a name (type quit to end):"
+    real_name = gets.chomp
+    consonant_change(vowel_change(swap_name(real_name)))
+  end
 end
 
-p full_name_change("Felicia Torres")
+p full_name_change()
 
-
-
-
-
-
-
-#   #index=0
-#   #while index < vowels.length
-#   #real_name.include? ("a") {|letter| p "real name has a" }
-#   real_name.include? (vowels)
-#   yield
-#     #else
-#       #p "real name does not have" + " " + (vowels[index])
-#       #p real_name
-#     #index += 1
-#     #end
-# end
 
 
 # SWAP NAME PSEUDOCODE
@@ -78,7 +67,12 @@ p full_name_change("Felicia Torres")
 #1. define a method that takes the full real name
 #2. define a variable for vowels
 #3. turn the real name into an array
-#real_name.include?(vowel)
+#-cycle through each letter in the real name array and compare it with the vowels array to see if letter is a vowel
+#-if a letter is a vowel, find where THAT SPECIFIC LETTER is in the VOWELS ARRAY (use indexes to compare), navigate to the next vowel in that list, and replace it with the original letter
+#-do this for each letter in the name and create a permanant change
+#-use the map! function in order to cycle through each letter and make the change
 
 
 # CONSONANT CHANGE PSEUDOCODE
+#1. repeat what was done to change vowels but for consonants
+#- define a variable that lays out all consonants
