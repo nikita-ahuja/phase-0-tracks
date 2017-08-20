@@ -45,15 +45,17 @@ end
 
 def full_name_change()
   puts "Enter a name (type 'quit' to end):"
-  real_name = gets.chomp
+  alias_collector = []
+  real_name = gets.chomp.push(alias_collector)
   while real_name != "quit" do
       puts "The fake name is" + " " + consonant_change(vowel_change(swap_name(real_name)))
       puts "Enter a name (type quit to end):"
-      real_name = gets.chomp
+      real_name = gets.chomp.push(alias_collector)
   end
 end
 
 full_name_change()
+p alias_collector
 
 
 # SWAP NAME PSEUDOCODE
