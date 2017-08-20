@@ -1,24 +1,56 @@
 def swap_name(real_name)
-  name_array = real_name.split(" ")
-  name_array[0], name_array[1] = name_array[1], name_array[0]
+  real_name = real_name.split(" ")
+  real_name[0], real_name[1] = real_name[1], real_name[0]
   #p name_array
+  return real_name.join(" ")
 end
 
 
 def vowel_change(real_name)
-  vowel = ["a", "e", "i", "o", "u"]
-  real_name = real_name.chars
+  vowels = ["a", "e", "i", "o", "u"]
+  real_name = real_name.downcase.chars
   real_name.map! do |letter|
-    if letter == vowel
-      letter.rotate(1)
+    if vowels.include?(letter)
+      letter = vowels.rotate[vowels.index(letter)]
+      #rotate 1 to the right from the letter in the vowels array
     else
-      letter
+      letter = letter
     end
   end
-  p real_name
+  #p real_name.join
+  return real_name.join
 end
 
-vowel_change("Nikita")
+#vowel_change("Aikita")
+
+
+def consonant_change(real_name)
+  consonants = "bcdfghjklmnpqrstvwxyz"
+  consonants = consonants.chars
+  real_name = real_name.downcase.chars
+  real_name.map! do |letter|
+    if consonants.include?(letter)
+      letter = consonants.rotate[consonants.index(letter)]
+      #rotate 1 to the right from the letter in the vowels array
+    else
+      letter = letter
+    end
+  end
+  #p real_name.join
+  return real_name.join
+end
+
+
+def full_name_change(real_name)
+  consonant_change(vowel_change(swap_name(real_name)))
+end
+
+p full_name_change("Felicia Torres")
+
+
+
+
+
 
 
 #   #index=0
