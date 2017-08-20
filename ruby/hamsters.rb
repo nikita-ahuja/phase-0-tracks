@@ -34,6 +34,6 @@ end #ending until loop
 
 puts "What is the hamster's estimated age?"
 estimated_age = nil
-puts "Hamster's estimated age is #{estimate_age}."
+puts "Hamster's estimated age is #{estimated_age}."
 
 
