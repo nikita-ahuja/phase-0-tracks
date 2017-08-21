@@ -105,8 +105,10 @@ end
 #Initially tried to use a while loop with a counter. I found that to get very confusing to achieve what I wanted - which was iteating through the loop n-1 times. For this reason, after looking through methods and reviewing, I decided to implement the times method.
 
 array = [2,1,4,3]
-bubblesort(array)
+array2 = [8,1,9,6]
+#did not work for second array.... will continue working to figure this out
 
+bubblesort(array2)
 
 
 
