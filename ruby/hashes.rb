@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 design_form = {}
 
 puts "Enter client's name:"
@@ -48,7 +38,7 @@ if update_key != "none"
   update_key = update_key.to_sym
   puts "What is the new or updated value for #{update_key}?"
   new_value = gets.chomp
-  design_form[update_key] = new_value
+  design_form[update_key] = new_value #same key that is already present in hash with a new value will update/overwite that key
   p design_form
 else
   puts "Great, we are all done!"
