@@ -8,7 +8,7 @@ def create_list(string_of_items)
     p grocery
 end
 
-test = "carrots apples cereal pizza"
+test = "carrot(s) apple(s) cereal pizza"
 example_list = create_list(test)
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps:
@@ -25,8 +25,8 @@ def add_item(list, item_name, quantity = 1)
     list[item_name] = quantity
     list
 end
-p add_item(example_list, "bananas", 7)
-p add_item(example_list, "mangos")
+p add_item(example_list, "banana(s)", 7)
+p add_item(example_list, "mango(s)")
 
 # Method to remove an item from the list
 # input: The list, item name
@@ -38,7 +38,7 @@ def delete_item(list, item_name)
   list
 end
 
-p delete_item(example_list, "bananas")
+p delete_item(example_list, "banana(s)")
 
 
 # Method to update the quantity of an item
@@ -51,10 +51,21 @@ def update_quantity(list, existing_item, new_quantity)
   list
 end
 
-p update_quantity(example_list, "mangos", 4)
+p update_quantity(example_list, "mango(s)", 4)
 
 
 # Method to print a list and make it look pretty
 # input: The list, item name and quanity
 # steps: Iterate through each item and print a sentence for the item
 # output: A detailed and cleaned up version of the items withing the sentence
+
+def print_list(list)
+  puts "GROCERY LIST"
+  puts "You need to buy:"
+  list.each do |grocery_item, quantity|
+  puts "#{quantity} #{grocery_item}"
+  end
+  puts "...and that's it!"
+end
+
+p print_list(example_list)
