@@ -19,5 +19,5 @@ class Santa
 end
 
 # DRIVER CODE:
-# Santa.new.speak
-# Santa.new.eat_milk_and_cookies("Oreo")
+#santa = Santa.new("Male", "Latino")
+#Santa.new("Male", "Latino").eat_milk_and_cookies("Oreo")
