@@ -1,5 +1,9 @@
 class Puppy
 
+  def initialize()
+    puts "Initializing new puppy instance..."
+  end
+
   def fetch(toy)
     puts "I brought back the #{toy}!"
     toy
@@ -38,4 +42,26 @@ puppy.speak(3)
 puppy.roll_over
 p puppy.dog_years(21)
 puppy.do_flips(3)
+
+# NEW CLASS (RELEASE 2)
+
+class Parrot
+
+  def initialize()
+    puts "Creating Parrot..."
+  end
+
+  def speak(word)
+    puts "Says #{word}!"
+  end
+
+  def flies(point_a, point_b)
+    puts "*Flies from #{point_a} to #{point_b}.*"
+  end
+
+end
+
+parrot = Parrot.new
+parrot.speak("Hello")
+parrot.flies("shoulder", "the bathroom")
 
