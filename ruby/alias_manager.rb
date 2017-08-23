@@ -1,7 +1,6 @@
 def swap_name(real_name)
   real_name = real_name.split(" ")
   real_name[0], real_name[1] = real_name[1], real_name[0]
-  #p name_array
   return real_name.join(" ")
 end
 
@@ -19,11 +18,8 @@ def vowel_change(real_name)
       letter = letter
     end
   end
-  #p real_name.join
   return real_name.join
 end
-
-#vowel_change("Aikita")
 
 
 def consonant_change(real_name)
@@ -38,7 +34,6 @@ def consonant_change(real_name)
       letter = letter
     end
   end
-  #p real_name.join
   return real_name.join.capitalize
 end
 
