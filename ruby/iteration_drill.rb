@@ -65,9 +65,22 @@ end
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000, using #each.
 # ----
-new_extinct = extinct_animals.keep_if do |animals, extinction_date|
+new_extinct = extinct_animals.keep_if do |animal, extinction_date|
   extinction_date < 2000
 end
+
+new_extinct = extinct_animals.each do |animal, extinction_date|
+  if extinction_date > 2000
+    extinct_animals.delete(animal)
+  end
+end
+
+p new_extinct_hash
+
+
+
+
+
 
 # p extinct_animals
 # p "----------------"
