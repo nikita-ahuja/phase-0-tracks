@@ -65,3 +65,19 @@ parrot = Parrot.new
 parrot.speak("Hello")
 parrot.flies("shoulder", "the bathroom")
 
+new_parrots = []
+
+50.times do |i|
+  new_parrots << Parrot.new
+  puts "You made parrot #{i}"
+end
+
+puts new_parrots
+
+new_parrots.each do |parrot|
+  parrot.speak("How are you?")
+  parrot.flies("shoulder", "the bathroom")
+end
+
+
+
