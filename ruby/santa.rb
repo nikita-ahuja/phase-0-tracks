@@ -16,6 +16,20 @@ class Santa
     puts "That was a good type of #{cookie_type}!"
   end
 
+  def celebrate_birthday(age)
+    age += 1
+  end
+
+  def get_mad_at(reindeer_name)
+    @reindeer_ranking.delete(reindeer_name)
+    @reindeer_ranking.insert(-1, reindeer_name)
+  end
+
+  def reindeer_ranking
+    print @reindeer_ranking
+  end
+
+
 end
 
 # DRIVER CODE:
@@ -50,6 +64,10 @@ santas << Santa.new("female", "Latina")
 end
 
 # p santas.length
+gal_santa = Santa.new("female", "black")
+
+gal_santa.get_mad_at("Dancer")
+gal_santa.reindeer_ranking
 
 
 
