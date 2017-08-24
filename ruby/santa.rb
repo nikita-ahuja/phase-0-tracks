@@ -1,4 +1,6 @@
 class Santa
+  attr_reader :age, :ethnicity, :reindeer_ranking
+  attr_accessor :gender
 
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
@@ -16,8 +18,8 @@ class Santa
     puts "That was a good type of #{cookie_type}!"
   end
 
-  def celebrate_birthday(age)
-    age += 1
+  def celebrate_birthday()
+   @age += 1
   end
 
   def get_mad_at(reindeer_name)
@@ -25,16 +27,11 @@ class Santa
     @reindeer_ranking.insert(-1, reindeer_name)
   end
 
-  def reindeer_ranking
-    print @reindeer_ranking
-  end
-
-
 end
 
 # DRIVER CODE:
-#santa = Santa.new("Male", "Latino")
-#Santa.new("Male", "Latino").eat_milk_and_cookies("Oreo")
+santa = Santa.new("Male", "Latino")
+Santa.new("Male", "Latino").eat_milk_and_cookies("Oreo")
 
 
 santas = []
@@ -64,10 +61,19 @@ santas << Santa.new("female", "Latina")
 end
 
 # p santas.length
-gal_santa = Santa.new("female", "black")
+
+gal_santa = Santa.new("female", "Black")
 
 gal_santa.get_mad_at("Dancer")
-gal_santa.reindeer_ranking
+puts gal_santa.reindeer_ranking
+puts gal_santa.celebrate_birthday()
+gal_santa.age
+puts gal_santa.ethnicity
+gal_santa.celebrate_birthday()
+puts gal_santa.age
+puts gal_santa.gender
+
+
 
 
 
