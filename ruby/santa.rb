@@ -74,6 +74,12 @@ puts gal_santa.age
 puts gal_santa.gender
 
 
+p santas[0]
+santas[0].gender = "male"
+p santas[0].gender
+p santas[0].age
+santas[0].celebrate_birthday
+
 
 
 
