@@ -1,6 +1,27 @@
 #PSEUDOCODE
 
 class Game
+  attr_reader :
+  attr_accessor :guess
+
+  def initialize
+    @word_solved = false
+    @game_over = false
+  end
+
+  def guessing(guess)
+    if guess == word
+      word_solved = true
+      game_over = true
+
+  def end_of_game
+    if game_over && word_solved
+      puts "Congratulations! You guessed the word."
+    else
+      puts "Haha... you lost!"
+    end
+  end
+
 end
 
 
@@ -42,3 +63,10 @@ end
 # -Assign that word to a variable
 # # Tell user 2 to begin guessing
 
+puts "User 1: enter a word for User 2 to guess:"
+word = gets.chomp
+amount_of_guesses = (word.length)/2
+puts "The word is now entered. User 2, you have #{amount_of_guesses} guesses."
+while !game_over
+  puts "Enter your first guess."
+  guess = gets.chomp
