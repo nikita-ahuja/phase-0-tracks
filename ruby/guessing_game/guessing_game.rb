@@ -2,7 +2,7 @@
 
 class Game
   attr_reader :game_over
-  attr_accessor :guess, :word, :total_guesses, :guess_counter, :guesses_left
+  attr_accessor :word, :total_guesses, :guesses_left
 
   def initialize(word)
     @word_solved = false
@@ -16,15 +16,16 @@ class Game
 
   def guessing(guess)
     @guess_counter += 1
-    @guess = guess
+    #@guess = guess
+    puts "Enter your first guess."
     if @guess == @word
       @word_solved = true
       @game_over = true
       puts "Congratulations! You guessed the word."
     #break
     else
-      #while !@word_solved && (@guess_counter < @total_guesses)
-        puts "Please enter another guess. You have #{@guesses_left} guesses left:"
+      puts "Try again. You have #{@guesses_left} guesses left."
+      @game_over = false
     end
   end
 
@@ -85,10 +86,9 @@ game = Game.new(word)
 #puts "User 1: enter a word for User 2 to guess:"
 #game.word = gets.chomp
 puts "The word is now entered. User 2, you have #{game.total_guesses} attempts to guess the word."
-
 while !game.game_over
-  puts "Enter your first guess."
   guess = gets.chomp
   game.guessing(guess)
+  #puts "Please enter another guess. You have #{@game.guesses_left} guesses left:"
 end
 
