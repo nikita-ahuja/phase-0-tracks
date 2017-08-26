@@ -2,7 +2,7 @@
 
 class Game
   attr_reader :game_over
-  attr_accessor :guess, :word, :total_guesses
+  attr_accessor :guess, :word, :total_guesses, :guess_counter, :guesses_left
 
   def initialize(word)
     @word_solved = false
@@ -13,11 +13,15 @@ class Game
     @guesses_left = @total_guesses - @guess_counter
   end
 
+
   def guessing(guess)
     @guess_counter += 1
+    @guess = guess
     if @guess == @word
       @word_solved = true
       @game_over = true
+      puts "Congratulations! You guessed the word."
+    #break
     else
       #while !@word_solved && (@guess_counter < @total_guesses)
         puts "Please enter another guess. You have #{@guesses_left} guesses left:"
@@ -25,13 +29,13 @@ class Game
   end
 
 
-  def end_of_game
-    if @game_over && @word_solved
-      puts "Congratulations! You guessed the word."
-    else
-      puts "Haha... you lost!"
-    end
-  end
+  # def end_of_game
+  #   if @game_over && @word_solved
+  #     puts "Congratulations! You guessed the word."
+  #   else # if game_over but word not solved
+  #     puts "Haha... you lost!"
+  #   end
+  # end
 
 end
 
@@ -78,7 +82,7 @@ puts "Welcome to the guessing game! User 1, please enter a word for User 2 to gu
 word = gets.chomp
 game = Game.new(word)
 
-p#uts "User 1: enter a word for User 2 to guess:"
+#puts "User 1: enter a word for User 2 to guess:"
 #game.word = gets.chomp
 puts "The word is now entered. User 2, you have #{game.total_guesses} attempts to guess the word."
 
