@@ -1,8 +1,8 @@
 #PSEUDOCODE
 
 class Game
-  attr_reader
-  attr_accessor :guess
+  attr_reader :total_guesses
+  attr_accessor :guess, :word
 
   def initialize
     @word_solved = false
@@ -15,7 +15,7 @@ class Game
 
   def guessing(guess)
   guess_counter = 0
-  guesses_left = word.length/2 - guess_counter
+  guesses_left = @total_guesses - @guess_counter
     if guess == word
       @word_solved = true
       @game_over = true
