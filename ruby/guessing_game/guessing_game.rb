@@ -1,35 +1,32 @@
 #PSEUDOCODE
 
 class Game
-  attr_reader :total_guesses
-  attr_accessor :guess, :word
+  attr_reader :game_over
+  attr_accessor :guess, :word, :total_guesses
 
-  def initialize
+  def initialize(word)
     @word_solved = false
     @game_over = false
-    @word = ""
-    @total_guesses = @word.length/2
+    @word = word
+    @total_guesses = (@word.length/2) + 3
     @guess_counter = 0
-    @guesses_left = total_guesses - guess_counter
+    @guesses_left = @total_guesses - @guess_counter
   end
 
   def guessing(guess)
-  guess_counter = 0
-  guesses_left = @total_guesses - @guess_counter
-    if guess == word
+    @guess_counter += 1
+    if @guess == @word
       @word_solved = true
       @game_over = true
     else
-      while !word_solved && counter < word.length/2
-        puts "Please enter another guess. You have #{guesses_left} guesses left:"
-        guess_counter += 1
-      end
+      #while !@word_solved && (@guess_counter < @total_guesses)
+        puts "Please enter another guess. You have #{@guesses_left} guesses left:"
     end
   end
 
 
   def end_of_game
-    if game_over && word_solved
+    if @game_over && @word_solved
       puts "Congratulations! You guessed the word."
     else
       puts "Haha... you lost!"
@@ -77,14 +74,17 @@ end
 # -Assign that word to a variable
 # # Tell user 2 to begin guessing
 
-puts "User 1: enter a word for User 2 to guess:"
-@word = gets.chomp
-#amount_of_guesses = (word.length)/2
-puts "The word is now entered. User 2, you have #{@total_guesses} guesses in total."
+puts "Welcome to the guessing game! User 1, please enter a word for User 2 to guess."
+word = gets.chomp
+game = Game.new(word)
 
-while !@game_over
+p#uts "User 1: enter a word for User 2 to guess:"
+#game.word = gets.chomp
+puts "The word is now entered. User 2, you have #{game.total_guesses} attempts to guess the word."
+
+while !game.game_over
   puts "Enter your first guess."
-  @guess = gets.chomp
-  guessing(@guess)
+  guess = gets.chomp
+  game.guessing(guess)
 end
 
