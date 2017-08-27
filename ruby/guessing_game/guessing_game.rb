@@ -1,10 +1,11 @@
 class Game
-  attr_reader :game_over, :word_solved, :total_guesses, :no_more_guesses
-  attr_accessor :guess, :word, :guess_counter, :guesses_left
+  attr_reader :total_guesses, :word_solved
+  attr_accessor :guess, :word
 
   def initialize(word)
     @word = word
     @total_guesses = (@word.length/2) + 3
+    @word_solved = false
   end
 
   def convert_word(word)
@@ -53,14 +54,6 @@ while amount_of_guesses < game.total_guesses
 end
 
 end
-
-
-
-
-
-
-
-
 
 
 
