@@ -3,13 +3,8 @@ class Game
   attr_accessor :guess, :word, :guess_counter, :guesses_left
 
   def initialize(word)
-    @word_solved = false
-    @game_over = false
     @word = word
     @total_guesses = (@word.length/2) + 3
-    #@guess_counter = 0
-    #@guesses_left = @total_guesses - @guess_counter
-    #@no_more_guesses = ((@total_guesses) == (@guess_counter))
   end
 
   def convert_word(word)
@@ -18,39 +13,12 @@ class Game
 
   def check_guess(guess)
     @guess = guess
-    #@guess_counter += 1
       if @guess == @word
         @word_solved = true
-        you_won
       else
         false
-        #you_lost
       end
   end
-
-  # def you_won
-  #   if @word_solved
-  #     @game_over = true
-  #     puts "Congratulations, you won!"
-  #   end
-  # end
-
-  # def you_lost
-  #   #if @guess_counter >= @total_guesses
-  #     game_over = true
-  #     puts "You are out of guesses and the game is now over."
-  #   end
-  # end
-
-  # def end_of_game
-  #   if @game_over && @word_solved
-  #     puts "Congratulations! You guessed the word."
-  #   else # if game_over but word not solved
-  #     puts "Haha... you lost!"
-  #   end
-  # end
-
-#end
 
 # Driver code:
 # # Ask the user to enter a word
@@ -71,13 +39,14 @@ while amount_of_guesses < game.total_guesses
   guess = gets.chomp
   amount_of_guesses += 1
 
-    if !game.check_guess(guess) && !game.game_over
+    if !game.check_guess(guess) && (amount_of_guesses < game.total_guesses)
       puts "Nope! Try again."
 
     elsif game.check_guess(guess) && game.word_solved
       puts "Congratulations, you won!"
+      break
 
-    else  !game.word_solved && game.game_over
+    elsif !game.check_guess(guess) && (amount_of_guesses == game.total_guesses)
       puts "You are out of guesses and the game is now over."
 
     end
