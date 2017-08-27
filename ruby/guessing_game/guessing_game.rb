@@ -1,56 +1,46 @@
-#PSEUDOCODE
-
 class Game
-  attr_reader :game_over
-  attr_accessor :guess, :word, :total_guesses, :guess_counter, :guesses_left
+  attr_reader :game_over, :word_solved, :total_guesses, :no_more_guesses
+  attr_accessor :guess, :word, :guess_counter, :guesses_left
 
   def initialize(word)
     @word_solved = false
     @game_over = false
     @word = word
     @total_guesses = (@word.length/2) + 3
-    @guess_counter = 0
-    @guesses_left = @total_guesses - @guess_counter
+    #@guess_counter = 0
+    #@guesses_left = @total_guesses - @guess_counter
+    #@no_more_guesses = ((@total_guesses) == (@guess_counter))
   end
 
+  def convert_word(word)
+    word = word.split("")
+  end
 
-  def guessing(guess)
+  def check_guess(guess)
     @guess = guess
-    @guess_counter += 1
-    while @guess_counter < @total_guesses
-      guess_a_letter
-    #else
-    end
-      you_lost
-    #end
+    #@guess_counter += 1
+      if @guess == @word
+        @word_solved = true
+        you_won
+      else
+        false
+        #you_lost
+      end
   end
 
-  def guess_a_letter(guess)
-    if @guess == @word
-      @word_solved = true
-      @game_over = true
-    else
-      #false
-      puts "Nope, try again!"
-    end
-  end
-
-
-  def you_lost
-    if @guess_counter > @total_guesses
-      game_over = true
-      puts "You are out of guesses and the game is now over."
-    end
-    #break
-  end
-
-
-  #     while !@word_solved && (@guess_counter < @total_guesses)
-  #       puts "Please enter another guess. You have #{@guesses_left} guesses left:"
-  #     end
-  #   puts "The game is over and you have lost! Haha!"
+  # def you_won
+  #   if @word_solved
+  #     @game_over = true
+  #     puts "Congratulations, you won!"
+  #   end
   # end
 
+  # def you_lost
+  #   #if @guess_counter >= @total_guesses
+  #     game_over = true
+  #     puts "You are out of guesses and the game is now over."
+  #   end
+  # end
 
   # def end_of_game
   #   if @game_over && @word_solved
@@ -62,6 +52,52 @@ class Game
 
 #end
 
+# Driver code:
+# # Ask the user to enter a word
+# -Assign that word to a variable
+# # Tell user 2 to begin guessing
+
+puts "Welcome to the guessing game! User 1, please enter a word for User 2 to guess."
+word = gets.chomp
+game = Game.new(word)
+game.convert_word(word)
+
+puts "The word is now entered. User 2, you have #{game.total_guesses} attempts to guess the word."
+
+amount_of_guesses = 0
+
+while amount_of_guesses < game.total_guesses
+  puts "Enter your guess."
+  guess = gets.chomp
+  amount_of_guesses += 1
+
+    if !game.check_guess(guess) && !game.game_over
+      puts "Nope! Try again."
+
+    elsif game.check_guess(guess) && game.word_solved
+      puts "Congratulations, you won!"
+
+    else  !game.word_solved && game.game_over
+      puts "You are out of guesses and the game is now over."
+
+    end
+end
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+#PSEUDOCODE
 
 # #def initialize
 # #Input: none
@@ -95,26 +131,3 @@ class Game
 # else
 # puts “haha you lost!”
 # end
-
-# Driver code:
-# # Ask the user to enter a word
-# -Assign that word to a variable
-# # Tell user 2 to begin guessing
-
-puts "Welcome to the guessing game! User 1, please enter a word for User 2 to guess."
-word = gets.chomp
-game = Game.new(word)
-
-#puts "User 1: enter a word for User 2 to guess:"
-#game.word = gets.chomp
-puts "The word is now entered. User 2, you have #{game.total_guesses} attempts to guess the word."
-
-while !game.game_over
-  puts "Enter your guess."
-  guess = gets.chomp
-  if !game.guessing(guess)
-    #puts "Nope! Try again."
-  end
-end
-end
-#puts "Congratulations you guessed the word!"
