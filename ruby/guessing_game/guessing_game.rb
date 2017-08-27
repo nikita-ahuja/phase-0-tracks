@@ -17,15 +17,34 @@ class Game
   def guessing(guess)
     @guess = guess
     @guess_counter += 1
+    while @guess_counter < @total_guesses
+      guess_a_letter
+    #else
+    end
+      you_lost
+    #end
+  end
+
+  def guess_a_letter(guess)
     if @guess == @word
       @word_solved = true
       @game_over = true
-      #puts "Congratulations! You guessed the word."
-        #break
     else
-      false
+      #false
+      puts "Nope, try again!"
     end
   end
+
+
+  def you_lost
+    if @guess_counter > @total_guesses
+      game_over = true
+      puts "You are out of guesses and the game is now over."
+    end
+    #break
+  end
+
+
   #     while !@word_solved && (@guess_counter < @total_guesses)
   #       puts "Please enter another guess. You have #{@guesses_left} guesses left:"
   #     end
@@ -41,7 +60,7 @@ class Game
   #   end
   # end
 
-end
+#end
 
 
 # #def initialize
@@ -94,8 +113,8 @@ while !game.game_over
   puts "Enter your guess."
   guess = gets.chomp
   if !game.guessing(guess)
-    puts "Nope! Try again."
+    #puts "Nope! Try again."
   end
 end
-
-puts "Congratulations you guessed the word!"
+end
+#puts "Congratulations you guessed the word!"
