@@ -19,8 +19,6 @@ class Game
     puts @letters_revealed
   end
 
-
-
   def check_guess(guess)
     @guess = guess
     if @guess == @word
@@ -31,12 +29,11 @@ class Game
       false
     end
   end
+
+
 end
 
-# Driver code:
-# # Ask the user to enter a word
-# -Assign that word to a variable
-# # Tell user 2 to begin guessing
+######## ------- User Interface -------------- #######
 
 puts "Welcome to the guessing game! User 1, please enter a word for User 2 to guess."
 word = gets.chomp
@@ -51,8 +48,15 @@ past_guesses = []
 while amount_of_guesses < game.total_guesses
   puts "Enter your guess."
   guess = gets.chomp
-  past_guesses << guess
-  amount_of_guesses += 1
+  past_guesses.push(guess) unless past_guesses.include?(guess)
+  p past_guesses
+  if past_guesses.include? (guess)
+    amount_of_guesses = amount_of_guesses
+  else
+    amount_of_guesses += 1
+  end
+
+  #amount_of_guesses +=1 unless past_guesses.include?(guess)
 
   if !game.check_guess(guess) && (amount_of_guesses < game.total_guesses) && (!word.include?(guess))
     puts "Nope! Try again."
@@ -61,7 +65,7 @@ while amount_of_guesses < game.total_guesses
     puts "Congratulations, you won!"
     break
 
-  elsif !game.check_guess(guess) && (amount_of_guesses == game.total_guesses)
+  elsif !game.check_guess(guess) && (amount_of_guesses == game.total_guesses) && past_guesses.length == game.total_guesses
     puts "You are out of guesses and the game is now over."
   end
 end
@@ -104,3 +108,8 @@ end
 # else
 # puts “haha you lost!”
 # end
+
+# Driver code:
+# # Ask the user to enter a word
+# -Assign that word to a variable
+# # Tell user 2 to begin guessing
