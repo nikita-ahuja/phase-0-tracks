@@ -31,7 +31,7 @@ class Game
   end
 end
 
-######## ------- User Interface -------------- #######
+######## ---------------- User Interface -------------- #######
 
 puts "Welcome to the guessing game! User 1, please enter a word for User 2 to guess."
 word = gets.chomp
@@ -45,15 +45,10 @@ past_guesses = []
 while amount_of_guesses < game.total_guesses
   puts "Enter your guess."
   guess = gets.chomp
+  amount_of_guesses += 1 unless past_guesses.include?(guess)
   past_guesses.push(guess) unless past_guesses.include?(guess)
-  p past_guesses
-  # if past_guesses.include? (guess)
-  #   amount_of_guesses = amount_of_guesses
-  # else
-  #   amount_of_guesses += 1
-  # end
+  p "Amount of guesses: " + "#{amount_of_guesses}"
 
-  #amount_of_guesses +=1 unless past_guesses.include?(guess)
 
   if !game.check_guess(guess) && (amount_of_guesses < game.total_guesses) && (!word.include?(guess))
     puts "Nope! Try again."
