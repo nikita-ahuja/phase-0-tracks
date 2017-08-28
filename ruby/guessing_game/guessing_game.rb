@@ -9,13 +9,13 @@ class Game
     @letters_revealed = "_" * @word.length
   end
 
-  def convert_word(word)
-    word = word.split("")
-  end
 
   def show_letter(guess)
-    @letter_index = @word.index(guess)
-    @letters_revealed[@letter_index] = guess
+    @word.chars.each_with_index do |letter, index|
+      if letter == guess
+        @letters_revealed[index] = guess
+      end
+    end
     puts @letters_revealed
   end
 
@@ -29,8 +29,6 @@ class Game
       false
     end
   end
-
-
 end
 
 ######## ------- User Interface -------------- #######
@@ -38,7 +36,6 @@ end
 puts "Welcome to the guessing game! User 1, please enter a word for User 2 to guess."
 word = gets.chomp
 game = Game.new(word)
-game.convert_word(word)
 
 puts "The word is now entered. User 2, you have #{game.total_guesses} attempts to guess the word."
 
@@ -50,11 +47,11 @@ while amount_of_guesses < game.total_guesses
   guess = gets.chomp
   past_guesses.push(guess) unless past_guesses.include?(guess)
   p past_guesses
-  if past_guesses.include? (guess)
-    amount_of_guesses = amount_of_guesses
-  else
-    amount_of_guesses += 1
-  end
+  # if past_guesses.include? (guess)
+  #   amount_of_guesses = amount_of_guesses
+  # else
+  #   amount_of_guesses += 1
+  # end
 
   #amount_of_guesses +=1 unless past_guesses.include?(guess)
 
@@ -69,8 +66,6 @@ while amount_of_guesses < game.total_guesses
     puts "You are out of guesses and the game is now over."
   end
 end
-
-
 
 
 
