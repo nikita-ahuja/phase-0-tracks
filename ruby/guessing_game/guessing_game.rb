@@ -23,13 +23,13 @@ class Game
 
   def check_guess(guess)
     @guess = guess
-      if @guess == @word
-        @word_solved = true
-      elsif guess.length == 1 && word.include?(guess)
-        show_letter(guess)
-      else
-        false
-      end
+    if @guess == @word
+      @word_solved = true
+    elsif guess.length == 1 && word.include?(guess)
+      show_letter(guess)
+    else
+      false
+    end
   end
 end
 
