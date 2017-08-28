@@ -1,6 +1,6 @@
 class Game
   attr_reader :total_guesses, :word_solved
-  attr_accessor :guess, :word, :guessed_letters
+  attr_accessor :guess, :word
 
   def initialize(word)
     @word = word
@@ -49,7 +49,6 @@ while amount_of_guesses < game.total_guesses
   past_guesses.push(guess) unless past_guesses.include?(guess)
   p "Amount of guesses: " + "#{amount_of_guesses}"
 
-
   if !game.check_guess(guess) && (amount_of_guesses < game.total_guesses) && (!word.include?(guess))
     puts "Nope! Try again."
 
@@ -57,10 +56,12 @@ while amount_of_guesses < game.total_guesses
     puts "Congratulations, you won!"
     break
 
-  elsif !game.check_guess(guess) && (amount_of_guesses == game.total_guesses) && past_guesses.length == game.total_guesses
-    puts "You are out of guesses and the game is now over."
+  elsif !game.check_guess(guess) && (amount_of_guesses == game.total_guesses)
+    puts "You are out of guesses and the game is now over. Better luck next time!"
   end
 end
+
+puts "Thank you for playing."
 
 
 
