@@ -1,25 +1,37 @@
 class Game
   attr_reader :total_guesses, :word_solved
-  attr_accessor :guess, :word
+  attr_accessor :guess, :word, :guessed_letters
 
   def initialize(word)
     @word = word
     @total_guesses = (@word.length/2) + 3
     @word_solved = false
+    @letters_revealed = "_" * @word.length
   end
 
   def convert_word(word)
     word = word.split("")
   end
 
+  def show_letter(guess)
+    @letter_index = @word.index(guess)
+    @letters_revealed[@letter_index] = guess
+    puts @letters_revealed
+  end
+
+
+
   def check_guess(guess)
     @guess = guess
       if @guess == @word
         @word_solved = true
+      elsif guess.length == 1 && word.include?(guess)
+        show_letter(guess)
       else
         false
       end
   end
+end
 
 # Driver code:
 # # Ask the user to enter a word
@@ -34,25 +46,24 @@ game.convert_word(word)
 puts "The word is now entered. User 2, you have #{game.total_guesses} attempts to guess the word."
 
 amount_of_guesses = 0
+past_guesses = []
 
 while amount_of_guesses < game.total_guesses
   puts "Enter your guess."
   guess = gets.chomp
+  past_guesses << guess
   amount_of_guesses += 1
 
-    if !game.check_guess(guess) && (amount_of_guesses < game.total_guesses)
-      puts "Nope! Try again."
+  if !game.check_guess(guess) && (amount_of_guesses < game.total_guesses) && (!word.include?(guess))
+    puts "Nope! Try again."
 
-    elsif game.check_guess(guess) && game.word_solved
-      puts "Congratulations, you won!"
-      break
+  elsif game.check_guess(guess) && game.word_solved
+    puts "Congratulations, you won!"
+    break
 
-    elsif !game.check_guess(guess) && (amount_of_guesses == game.total_guesses)
-      puts "You are out of guesses and the game is now over."
-
-    end
-end
-
+  elsif !game.check_guess(guess) && (amount_of_guesses == game.total_guesses)
+    puts "You are out of guesses and the game is now over."
+  end
 end
 
 
