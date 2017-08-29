@@ -13,3 +13,13 @@
 // 5. return the longest item in the array
 //output: largest item in the array... a single string!!!
 
+function longest_item(array) {
+  var array_lengths = ""
+  for (var i = 0; i <= array.length ; i++) {
+    array_lengths += array[i];
+  }
+console.log(array_lengths);
+}
+
+//console.log(array_lengths);
+longest_item(["hello", "hello1", "hello11"]);
