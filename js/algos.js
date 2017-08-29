@@ -15,8 +15,8 @@
 
 function longest_item(array) {
   var array_lengths = ""
-  for (var i = 0; i <= array.length ; i++) {
-    array_lengths += array[i];
+  for (var i = 0; i <= array.length - 1 ; i++) {
+    array_lengths += (array[i]).length;
   }
 console.log(array_lengths);
 }
