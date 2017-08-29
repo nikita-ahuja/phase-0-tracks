@@ -14,11 +14,13 @@
 //output: largest item in the array... a single string!!!
 
 function longest_item(array) {
-  var array_lengths = ""
+  var longest_item = ""
   for (var i = 0; i <= array.length - 1 ; i++) {
-    array_lengths += (array[i]).length;
+    if ((array[i]).length > longest_item.length) {
+      longest_item = array[i];
+    }
   }
-console.log(array_lengths);
+console.log(longest_item);
 }
 
 //console.log(array_lengths);
