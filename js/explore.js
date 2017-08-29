@@ -21,4 +21,7 @@ return(new_string);
 }
 
 reversed_day = reverse("wonderful day");
-console.log(reversed_day);
+
+if (1 <= 3) {
+  console.log(reversed_day);
+}
