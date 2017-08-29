@@ -13,7 +13,7 @@
 // 5. return the longest item in the array
 //output: largest item in the array... a single string!!!
 
-function longest_item(array) {
+function return_longest(array) {
   var longest_item = ""
   for (var i = 0; i <= array.length - 1 ; i++) {
     if ((array[i]).length > longest_item.length) {
@@ -24,4 +24,6 @@ console.log(longest_item);
 }
 
 //console.log(array_lengths);
-longest_item(["hello", "hello1", "hello11"]);
+return_longest(["hello", "hello1", "hello11"]);
+return_longest(["1234", "123456", "123"]);
+return_longest(["NA", "Nikita Ahuja", "Ahuja"])
