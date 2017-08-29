@@ -8,7 +8,7 @@
 // - print the letter at the final index
 // - add it to the new string (+=)
 // -keep repeating this method FOR EACH LETTER (i--) until you have reached index 0 of the original string
-// c. when the word is done switching characters, print the word
+// c. when the word is done adding all the letters to the new string, print the new string
 // 3. Output: a string that has been reversed
 
 
@@ -16,8 +16,6 @@ function reverse(string) {
   var new_string = ""
   for(var i = string.length-1; i >= 0; i--) {
       new_string += string[i];
-      //console.log(string[i])
-      //console.log(string[x])
   }
 console.log(new_string);
 }
