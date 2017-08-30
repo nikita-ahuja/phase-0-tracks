@@ -16,12 +16,15 @@ class VirusPredictor
     @population_density = population_density
   end
 
+  # private
+
   def virus_effects
     predicted_deaths
     speed_of_spread
   end
 
-  private
+ private
+ #You will not be able to call the predicted_deaths of speed_of)spread methods on an instane of VirusPredictor because they are under the private method and considered private methods.
 
   def predicted_deaths
     # predicted deaths is solely based on population density
@@ -72,6 +75,7 @@ end
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
+#alabama.predicted_deaths
 
 jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
 jersey.virus_effects
