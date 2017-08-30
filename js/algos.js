@@ -48,12 +48,17 @@ console.log(longest_item);
 //output: true or false
 
 
-function compare_objects(object1) {
+function compare_objects(object1, object2) {
   for (var key in object1) {
     if (object1.hasOwnProperty(key)) {
       console.log(key, object1[key]);
     }
   }
+  for (var key in object2) {
+    if (object2.hasOwnProperty(key)) {
+      console.log(key, object2[key]);
+    }
+  }
 }
 
-compare_objects({animal: "Dog", legs: 4})
+compare_objects({animal: "Dog", legs: 4}, {animal: "Cat", legs: 4})
