@@ -1,23 +1,27 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Catherine V. ].
+# We spent [1.5] hours on this challenge.
+
 
 # EXPLANATION OF require_relative
-#
-#
+# require_relative allows us to access a file in the same
+# directory without having to copy the direct code
+# require looks through ruby gems to see if a certain library is present
 require_relative 'state_data'
 
 class VirusPredictor
 
+# assigns attributes of state, population, and population density to an instance of VirusPredictor
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
-  # private
+# private
 
+# calls predicted_deaths and speed_of_spread methods below
   def virus_effects
     predicted_deaths
     speed_of_spread
@@ -26,6 +30,7 @@ class VirusPredictor
  private
  #You will not be able to call the predicted_deaths of speed_of)spread methods on an instane of VirusPredictor because they are under the private method and considered private methods.
 
+# takes pop., pop. density, and state as arguments and compares them against certain thresholds and generates a number of deaths
   def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -44,6 +49,7 @@ class VirusPredictor
 
   end
 
+  # generates speed of spread of disease based on certain population densities
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
