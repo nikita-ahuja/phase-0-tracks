@@ -27,3 +27,14 @@ console.log(longest_item);
 return_longest(["hello", "hello1", "hello11"]);
 return_longest(["1234", "123456", "123"]);
 return_longest(["NA", "Nikita Ahuja", "Ahuja"])
+
+
+//RELEASE 1: Write a function that takes two objects and checks to see if the objects share at least one key-value pair.
+
+//Examples:
+
+// yourFunction({name: "Steven", age: 54}, {name: "Tamir", age: 54}); #  true
+
+// yourFunction({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3}); #  true
+
+// If no pairs match (and keep in mind that the two objects may not even have any of the same keys), the function should return false. To make your life easier, don't worry about whether a property is a string ('age') or an identifier name (age). Those can be considered equivalent.
