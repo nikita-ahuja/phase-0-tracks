@@ -30,6 +30,8 @@ attr_accessor
     total_salaries
   end
 
+  def
+
 
 end
 
