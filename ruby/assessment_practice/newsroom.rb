@@ -22,14 +22,27 @@ attr_accessor
     reporter_name.length * 10000
   end
 
+  def total_salaries
+    total_salaries = 0
+    @reporters.each do |name, skills|
+      total_salaries += salary_for(name)
+    end
+    total_salaries
+  end
+
 
 end
 
 p room1 = Newsroom.new("Biiiiitch", 100_000)
 p room1.name
 #p room1.budget
-p room1.add_reporter("Nikita Ahuja")
-p room1.add_reporter("Nikita Ahuja")
+#p room1.add_reporter("Nikita Ahuja")
+#p room1.add_reporter("Nikita Ahuja")
+p room1.add_reporter("Anderson Cooper")
 p room1.salary_for("Anderson Cooper")
+p room1.add_reporter("Wolf Blitzer")
+p room1.add_reporter("Jim Acosta")
+p room1.total_salaries
+
 
 
