@@ -48,6 +48,7 @@ class VirusPredictor
   end
 
 
+      #ORIGINAL POPULATION DENISTY METHOD NOT DRY
       # predicted deaths is solely based on population density
     # if @population_density >= 200
     #   number_of_deaths = (@population * 0.4).floor
