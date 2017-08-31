@@ -3,7 +3,7 @@
 // function reverse(string)
 // 1. Input: string
 // 2. Steps: see below
-// a. start with a blank string to append letters to (since strings themselves are IMMUTABLE in JavaScript)
+// a. start with a blank string to append letters
 // -start at the final index of the initial string (think of where to initialize counter)
 // - navigate to the letter at the final index
 // - add it to the new string (+=)
