@@ -1,7 +1,7 @@
 def swap_name(real_name)
   real_name = real_name.split(" ")
   real_name[0], real_name[1] = real_name[1], real_name[0]
-  return real_name.join(" ")
+  return real_name.join(" ") #keep the names separate or split them, capitalize them, and then join them together
 end
 
 
@@ -21,7 +21,6 @@ def vowel_change(real_name)
   return real_name.join
 end
 
-
 def consonant_change(real_name)
   consonants = "bcdfghjklmnpqrstvwxyz"
   consonants = consonants.chars
@@ -34,7 +33,7 @@ def consonant_change(real_name)
       letter = letter
     end
   end
-  return real_name.join.capitalize
+  return real_name.join.capitalize #consider changing this to full name change
 end
 
 
