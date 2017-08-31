@@ -12,6 +12,8 @@ attr_accessor
   def add_reporter(reporter_name)
     if @reporters.keys.include?(reporter_name)
       puts "We can't hire them!"
+    elsif has_budget?(reporter_name) == false
+      puts "We can't afford them!"
     else
       @reporters[reporter_name] = []
     end
@@ -34,25 +36,22 @@ attr_accessor
     if total_salaries + salary_for(reporter_name) > @budget
       false
     else
-      has_budget
+      true
     end
   end
 
-
-
 end
 
-p room1 = Newsroom.new("Biiiiitch", 100_000)
+p room1 = Newsroom.new("Newsroom", 300_000)
 p room1.name
 #p room1.budget
-#p room1.add_reporter("Nikita Ahuja")
-#p room1.add_reporter("Nikita Ahuja")
 p room1.add_reporter("Anderson Cooper")
 p room1.salary_for("Anderson Cooper")
 p room1.add_reporter("Wolf Blitzer")
 p room1.add_reporter("Jim Acosta")
 p room1.total_salaries
 p room1.has_budget?("Rachel Maddow")
+p room1.add_reporter("Rachel Maddow")
 
 
 
