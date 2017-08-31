@@ -30,7 +30,14 @@ attr_accessor
     total_salaries
   end
 
-  def
+  def has_budget?(reporter_name)
+    if total_salaries + salary_for(reporter_name) > @budget
+      false
+    else
+      has_budget
+    end
+  end
+
 
 
 end
@@ -45,6 +52,7 @@ p room1.salary_for("Anderson Cooper")
 p room1.add_reporter("Wolf Blitzer")
 p room1.add_reporter("Jim Acosta")
 p room1.total_salaries
+p room1.has_budget?("Rachel Maddow")
 
 
 
