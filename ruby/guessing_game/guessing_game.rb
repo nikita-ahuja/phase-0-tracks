@@ -20,8 +20,8 @@ class Game
   end
 
   def check_guess(guess)
-    @guess = guess
-    if @guess == @word
+    #@guess = guess
+    if guess == @word
       @word_solved = true
     elsif guess.length == 1 && word.include?(guess)
       show_letter(guess)
@@ -40,8 +40,12 @@ game = Game.new(word)
 puts "The word is now entered. User 2, you have #{game.total_guesses} attempts to guess the word."
 
 amount_of_guesses = 0
-past_guesses = []
+past_guesses = [] #should be checking this inside of the logic in the class
 
+
+#predicate methods
+#consider putting in class
+#ask yourself if this is necessary to the game to work?
 while amount_of_guesses < game.total_guesses
   puts "Enter your guess."
   guess = gets.chomp
