@@ -44,7 +44,7 @@ attr_accessor
     puts "Welcome to the #{@name} Newsroom!"
     puts "Your reporting team is:"
     @reporters.each do |reporter, skills|
-      skills.join(", ")
+      #skills.join(", ")
       puts "-#{reporter}, specializing in #{skills}."
     end
     p "Thank you for watching! Good night!"
