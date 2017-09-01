@@ -9,13 +9,13 @@ attr_accessor
     @reporters = {}
   end
 
-  def add_reporter(reporter_name)
+  def add_reporter(reporter_name, skills)
     if @reporters.keys.include?(reporter_name)
       puts "We can't hire them!"
     elsif has_budget?(reporter_name) == false
       puts "We can't afford them!"
     else
-      @reporters[reporter_name] = []
+      @reporters[reporter_name] = skills
     end
     @reporters
   end
@@ -40,18 +40,39 @@ attr_accessor
     end
   end
 
+  def friendly_print
+    puts "Welcome to the #{@name} Newsroom!"
+    puts "Your reporting team is:"
+    @reporters.each do |reporter, skills|
+      skills.join(", ")
+      puts "-#{reporter}, specializing in #{skills}."
+    end
+    p "Thank you for watching! Good night!"
+  end
+
+  def find_reporters_with_skill(skill)
+    reporters_with_skill = []
+    @reporters.each do |reporter, skills|
+      if skills.include?(skill)
+        reporters_with_skill.push(reporter)
+      end
+    end
+  p reporters_with_skill
+  end
+
 end
 
-p room1 = Newsroom.new("Newsroom", 300_000)
+p room1 = Newsroom.new("Elysium", 300_000)
 p room1.name
-#p room1.budget
-p room1.add_reporter("Anderson Cooper")
+p room1.add_reporter("Anderson Cooper", ["politics", "economics", "grey hair"])
 p room1.salary_for("Anderson Cooper")
-p room1.add_reporter("Wolf Blitzer")
-p room1.add_reporter("Jim Acosta")
+# p room1.add_reporter("Wolf Blitzer")
+# p room1.add_reporter("Jim Acosta")
 p room1.total_salaries
 p room1.has_budget?("Rachel Maddow")
-p room1.add_reporter("Rachel Maddow")
+p room1.add_reporter("Rachel Maddow", ["speaking", "presenting"])
+room1.friendly_print
+room1.find_reporters_with_skill("speaking")
 
 
 
