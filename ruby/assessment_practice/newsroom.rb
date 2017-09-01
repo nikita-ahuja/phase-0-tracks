@@ -1,6 +1,6 @@
 class Newsroom
 
-attr_reader :name
+attr_reader :name, :reporters
 attr_accessor :budget
 
   def initialize(name, budget)
@@ -82,6 +82,10 @@ attr_accessor :budget
     reporters_with_skill.keys
   end
 
+  def new_skill(reporter_name, skill)
+    @reporters[reporter_name] << skill
+  end
+
 end
 
 p room1 = Newsroom.new("Elysium", 300_000)
@@ -95,7 +99,10 @@ p room1.has_budget?("Rachel Maddow")
 p room1.add_reporter("Rachel Maddow", ["speaking", "presenting"])
 room1.friendly_print
 p room1.find_reporters_with_skill("grey hair")
-#p room1.reporters
+p room1.reporters
+room1.new_skill("Anderson Cooper", "painting")
+p room1.reporters
+
 
 
 
