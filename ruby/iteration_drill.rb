@@ -15,7 +15,8 @@ end
 # For instance: are boots in your list of supplies?
 # ----
 zombie_apocalypse_supplies.each do |supplies|
-  #p supplies.include?("boots")
+#p zombie_apocalypse_supplies.include?("boots") #do |supplies|
+  p supplies.include?("boots")
 end
 
 # 3. You can't carry too many things, you've only got room in your pack for 5.
@@ -75,7 +76,7 @@ new_extinct = extinct_animals.each do |animal, extinction_date|
   end
 end
 
-p new_extinct_hash
+p new_extinct
 
 
 
