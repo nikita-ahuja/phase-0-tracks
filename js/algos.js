@@ -55,16 +55,16 @@ function compare_objects(object1, object2) {
     for (var key2 in object2) {
       if (key1 == key2) {
         if (object1[key1] == object2[key2]) {
-          console.log("This key/value in pair in Obj2 matches in Obj1??");
+          // console.log("This key/value in pair in Obj2 matches in Obj");
           return true;
         } else {
-          console.log("The keys match but the values don't");
+          //console.log("The keys match but the values don't");
           key1++
           key2++
         }
-      } else {
-        key1++
-        key2++
+      // } else {
+      //   key1++
+      //   key2++
       }
     }
   }
