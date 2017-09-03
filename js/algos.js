@@ -1,4 +1,5 @@
 // RELEASE 0:
+
 // A. Write a function that takes an array of words or phrases and returns the longest word or phrase in the array. So if we gave your function the array of ["long phrase","longest phrase","longer phrase"], it would return "longest phrase". This is a logical reasoning challenge, so try to reason through this based on what you already know, rather than Googling the fanciest solution or looking up built-in sorting functions. Note that "some string".length will do what you expect in JS.
 // B. Add driver code that tests your function on a few arrays.
 
@@ -38,6 +39,7 @@ console.log(longest_item);
 
 // If no pairs match (and keep in mind that the two objects may not even have any of the same keys), the function should return false. To make your life easier, don't worry about whether a property is a string ('age') or an identifier name (age). Those can be considered equivalent.
 
+
 // RELEASE 1 PSEUDOCODE
 // Create a function that takes 2 objects as an argument and returns true if the objects have atleast one same key/value pair or false if no pairs match
 //input: 2 objects (object1, object2)
@@ -49,14 +51,20 @@ console.log(longest_item);
 
 
 function compare_objects(object1, object2) {
-  for (var key in object1) {
-    for (var key in object2) {
-      if ((key, object1[key]) == (key, object2[key])) {
-        console.log("This key/value in pair in Obj2 matches in Obj1??");
-        //return true;
+  for (var key1 in object1) {
+    for (var key2 in object2) {
+      if (key1 == key2) {
+        if (object1[key1] == object2[key2]) {
+          console.log("This key/value in pair in Obj2 matches in Obj1??");
+          return true;
+        } else {
+          console.log("The keys match but the values don't");
+          key1++
+          key2++
+        }
       } else {
-        console.log("This key/value pair in Obj2 does not match in Obj1??");
-        //return false;
+        key1++
+        key2++
       }
     }
   }
