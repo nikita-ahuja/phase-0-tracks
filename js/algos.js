@@ -53,6 +53,10 @@ console.log(longest_item);
 //output: true or false
 
 
+// APPROACH 1
+
+// In Approach 1, I wasn't able to get the true/false result I wanted so I went to try another approach with pushing items into arrays (see Approach 2). I feel like my logic is sound but in some way it isn't being present properly.
+
 function compare_objects(object1, object2) {
   for (var key1 in object1) {
     for (var key2 in object2) {
@@ -75,6 +79,9 @@ function compare_objects(object1, object2) {
 }
 
 
+//////////////////////////////////////////////////////////////////////////////////////
+
+// APPROACH 2
 function compare_objects(object1, object2) {
 
   var object1_keys1 = new Array();
@@ -103,11 +110,11 @@ console.log (object1_values1);
 console.log (object2_keys2);
 console.log (object2_values2);
 
-} //If i continue this approach I would compare the 2 arrays using conditionals
+} //If i continue this approach I would compare the 2 key arrays with the keys using conditionals. Then if the keys match, I would compare the same index values in the value arrays arrays using conditionals. If the keys don't match, I would move onto the next set of keys.
 
 
 (compare_objects({animal: "Dog", legs: 4}, {animal: "Dog", legs: 4}))
-// In this approach, I wasn't able to get the true/false result I wanted so I went to try another approach with pushing items into arrays (see below). I feel like my logic is sound but in some way it isn't being present properly.
+
 
 
 //Release 2: Generate Random Test Data
