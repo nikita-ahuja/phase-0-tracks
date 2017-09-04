@@ -81,25 +81,30 @@ console.log (object2_values2);
 } //If i continue this approach I would compare the 2 arrays using conditionals
 
 
-// function compare_objects(object1, object2) {
-//   for (var key1 in object1) {
-//     for (var key2 in object2) {
-//       if (object1[key1] == object2[key2]) { //if the key/value pair is equal
-//           { break ;} //break out of the loop
-//           return true; //return true, no need to check further
-//       } else if (object1[key1] !== object2[key2]) { //if the key/value pair isnt equal
-//         (object1[key1]++ && object2[key2]++);
-//         //continue;
-//       } else {
-//         return false ;
-//       } //close the else portion of the if/else statement
-//     }
-//   //return false; // close the object2 for loop
-//   } //close the object1 for loop
-// }
+function compare_objects(object1, object2) {
+  for (var key1 in object1) {
+    for (var key2 in object2) {
+      if (key1 == key2) { //if the keys are equal, go on to check the values
+        if (object1[key1] == object2[key2]); //if the values are equal
+          { break ;} //break out of the loop and return true, no need to check further
+          return true;
+        // } else {
+        //   (key1++ && key2++); //move on to the next keys and repeat
+      } else if (key1 !== key2) { //if the keys arent equal
+        //continue;//move onto the next keys
+        (key1++ && key2++);
+        //continue;
+      } else {
+        return false ;
+      }//close the else portion of the if/else statement
+    } // close the object2 for loop
+  } //close the object1 for loop
+//return false ;
+}
 
 
 (compare_objects({animal: "Dog", legs: 4}, {animal: "Dog", legs: 4}))
+// In this approach, I wasn't able to get the true/false result I wanted so I went to try another approach (see above). I feel like my logic is sound but in osme way it isn't being present properly.
 
 
 //Release 2: Generate Random Test Data
