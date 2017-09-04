@@ -99,7 +99,7 @@ console.log (object2_values2);
 // }
 
 
-//(compare_objects({animal: "Dog", legs: 4}, {animal: "Dog", legs: 4}))
+(compare_objects({animal: "Dog", legs: 4}, {animal: "Dog", legs: 4}))
 
 
 //Release 2: Generate Random Test Data
