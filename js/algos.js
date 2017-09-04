@@ -50,26 +50,53 @@ console.log(longest_item);
 //output: true or false
 
 
+// function compare_objects(object1, object2) {
+
+//   var object1_keys1 = new Array();
+//   var object1_values1 = new Array();
+
+//   var object2_keys2 = new Array();
+//   var object2_values2 = new Array();
+
+//   for (var keys1 in object1) {
+//     var object1_keys = object1_keys1.push(keys1);
+//     var object1_values = object1_values1.push(object1[keys1]);
+// } //close object 1 for loop
+
+//   for (var keys2 in object2) {
+//     var object2_keys = object2_keys2.push(keys2);
+//     var object2_value = object2_values2.push(object2[keys2]);
+// }
+
+//   for (var j in object1_keys)
+//     for (var k in object2_keys)
+//       if j == k
+//         return true;
+
+// console.log (object1_keys1);
+// console.log (object1_values1);
+// console.log (object2_keys2);
+// console.log (object2_values2);
+
+// }
+
+
 function compare_objects(object1, object2) {
-
-  var object1_keys = new Array();
-  var object1_values = new Array();
-  var object2_keys = new Array();
-  var object2_values = new Array();
-
   for (var key1 in object1) {
     for (var key2 in object2) {
-      if (key1 == key2) {
-        if (object1[key1] == object2[key2]) {
-          return true;
-        } else {
-          key1++
-          key2++
-        }
-
-      }
+      if (object1[key1] == object2[key2]) { //if the key/value pair is equal
+          { break ;} //break out of the loop
+          return true; //return true, no need to check further
+      } else if (object1[key1] !== object2[key2]) { //if the key/value pair isnt equal
+        (object1[key1]++ && object2[key2]++);
+        //continue;
+      } else {
+        return false ;
+      } //close the else portion of the if/else statement
     }
-  }
+  //return false; // close the object2 for loop
+  } //close the object1 for loop
 }
 
-compare_objects({animal: "Dog", legs: 4}, {animal: "Cat", legs: 4})
+
+//console.log(compare_objects({animal: "Dog", legs: 4}, {animal: "Dog", legs: 4}))
