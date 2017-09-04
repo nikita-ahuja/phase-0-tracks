@@ -44,9 +44,12 @@ console.log(longest_item);
 // Create a function that takes 2 objects as an argument and returns true if the objects have atleast one same key/value pair or false if no pairs match
 //input: 2 objects (object1, object2)
 //steps:
-// 1. iterate through the items in the first object
-// 2. iterate through the items in the second object
-// 3. compare all object to see if there are any key/value pairs that are the same ...?
+// 1. Look at the first key in object 1
+// 2. Look at the first key in object 2
+// 3. Compare the keys
+  //IF the keys are the same, go on to check the values
+  //If the keys are NOT the same, move on to the next key in each object
+//4. Once you find a key value pair that matches, return true and exit the loop.
 //output: true or false
 
 
