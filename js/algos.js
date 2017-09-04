@@ -51,32 +51,25 @@ console.log(longest_item);
 
 
 function compare_objects(object1, object2) {
+
+  var object1_keys = new Array();
+  var object1_values = new Array();
+  var object2_keys = new Array();
+  var object2_values = new Array();
+
   for (var key1 in object1) {
     for (var key2 in object2) {
       if (key1 == key2) {
         if (object1[key1] == object2[key2]) {
-          // console.log("This key/value in pair in Obj2 matches in Obj");
           return true;
         } else {
-          //console.log("The keys match but the values don't");
           key1++
           key2++
         }
-      // } else {
-      //   key1++
-      //   key2++
+
       }
     }
   }
 }
 
 compare_objects({animal: "Dog", legs: 4}, {animal: "Cat", legs: 4})
-//compare_objects({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3})
-
-// if (object1.hasOwnProperty(key)) {
-//       console.log(key, object1[key]);
-//     }
-//   }
-//   for (var key in object2) {
-//     if (object2.hasOwnProperty(key)) {
-//       console.log(key, object2[key]);
