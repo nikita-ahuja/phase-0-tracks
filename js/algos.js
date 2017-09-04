@@ -44,12 +44,44 @@ console.log(longest_item);
 // Create a function that takes 2 objects as an argument and returns true if the objects have atleast one same key/value pair or false if no pairs match
 //input: 2 objects (object1, object2)
 //steps:
-// 1. iterate through the items in the first object
-// 2. iterate through the items in the second object
-// 3. compare all object to see if there are any key/value pairs that are the same ...?
+// 1. Look at the first key in object 1
+// 2. Look at the first key in object 2
+// 3. Compare the keys
+  //IF the keys are the same, go on to check the values
+  //If the keys are NOT the same, move on to the next key in each object
+//4. Once you find a key value pair that matches, return true and exit the loop.
 //output: true or false
 
 
+// APPROACH 1
+
+// In Approach 1, I wasn't able to get the true/false result I wanted so I went to try another approach with pushing items into arrays (see Approach 2). I feel like my logic is sound but in some way it isn't being present properly.
+
+function compare_objects(object1, object2) {
+  for (var key1 in object1) {
+    for (var key2 in object2) {
+      if (key1 == key2) { //if the keys are equal, go on to check the values
+        if (object1[key1] == object2[key2]); //if the values are equal
+          { break ;} //break out of the loop and return true, no need to check further
+          return true;
+        // } else {
+        //   (key1++ && key2++); //move on to the next keys and repeat
+      } else if (key1 !== key2) { //if the keys arent equal
+        //continue;//move onto the next keys
+        (key1++ && key2++);
+        //continue;
+      } else {
+        return false ;
+      }//close the else portion of the if/else statement
+    } // close the object2 for loop
+  } //close the object1 for loop
+//return false ;
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+// APPROACH 2
 function compare_objects(object1, object2) {
 
   var object1_keys1 = new Array();
@@ -78,37 +110,21 @@ console.log (object1_values1);
 console.log (object2_keys2);
 console.log (object2_values2);
 
-} //If i continue this approach I would compare the 2 arrays using conditionals
+} //If i continue this approach I would compare the 2 key arrays with the keys using conditionals. Then if the keys match, I would compare the same index values in the value arrays arrays using conditionals. If the keys don't match, I would move onto the next set of keys.
 
 
-// function compare_objects(object1, object2) {
-//   for (var key1 in object1) {
-//     for (var key2 in object2) {
-//       if (object1[key1] == object2[key2]) { //if the key/value pair is equal
-//           { break ;} //break out of the loop
-//           return true; //return true, no need to check further
-//       } else if (object1[key1] !== object2[key2]) { //if the key/value pair isnt equal
-//         (object1[key1]++ && object2[key2]++);
-//         //continue;
-//       } else {
-//         return false ;
-//       } //close the else portion of the if/else statement
-//     }
-//   //return false; // close the object2 for loop
-//   } //close the object1 for loop
-// }
+(compare_objects({animal: "Dog", legs: 4}, {animal: "Dog", legs: 4}))
 
-
-//(compare_objects({animal: "Dog", legs: 4}, {animal: "Dog", legs: 4}))
 
 
 //Release 2: Generate Random Test Data
 
 // Write a function that takes an integer for length, and builds and returns an array of strings of the given length. So if we ran your function with an argument of 3, we would get an array of 3 random words back (the words don't have to be actual sensical English words -- "nnnnfph" totally counts). The words should be of randomly varying length, with a minimum of 1 letter and a maximum of 10 letters. (This involves a new trick, generating a random number, that you'll have to look up, but the solution on how to do so is relatively straightforward.)
 
-// Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
+// Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result
 
  function random_data(integer) {
+  var alphabet = "abcdefghijklmnopqrstuvwxyz"
   var string = ""
 
 
