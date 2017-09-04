@@ -50,53 +50,68 @@ console.log(longest_item);
 //output: true or false
 
 
-// function compare_objects(object1, object2) {
-
-//   var object1_keys1 = new Array();
-//   var object1_values1 = new Array();
-
-//   var object2_keys2 = new Array();
-//   var object2_values2 = new Array();
-
-//   for (var keys1 in object1) {
-//     var object1_keys = object1_keys1.push(keys1);
-//     var object1_values = object1_values1.push(object1[keys1]);
-// } //close object 1 for loop
-
-//   for (var keys2 in object2) {
-//     var object2_keys = object2_keys2.push(keys2);
-//     var object2_value = object2_values2.push(object2[keys2]);
-// }
-
-//   for (var j in object1_keys)
-//     for (var k in object2_keys)
-//       if j == k
-//         return true;
-
-// console.log (object1_keys1);
-// console.log (object1_values1);
-// console.log (object2_keys2);
-// console.log (object2_values2);
-
-// }
-
-
 function compare_objects(object1, object2) {
-  for (var key1 in object1) {
-    for (var key2 in object2) {
-      if (object1[key1] == object2[key2]) { //if the key/value pair is equal
-          { break ;} //break out of the loop
-          return true; //return true, no need to check further
-      } else if (object1[key1] !== object2[key2]) { //if the key/value pair isnt equal
-        (object1[key1]++ && object2[key2]++);
-        //continue;
-      } else {
-        return false ;
-      } //close the else portion of the if/else statement
-    }
-  //return false; // close the object2 for loop
-  } //close the object1 for loop
+
+  var object1_keys1 = new Array();
+  var object1_values1 = new Array();
+
+  var object2_keys2 = new Array();
+  var object2_values2 = new Array();
+
+  for (var keys1 in object1) {
+    var object1_keys = object1_keys1.push(keys1);
+    var object1_values = object1_values1.push(object1[keys1]);
+} //close object 1 for loop
+
+  for (var keys2 in object2) {
+    var object2_keys = object2_keys2.push(keys2);
+    var object2_value = object2_values2.push(object2[keys2]);
 }
 
+  // for (var j in object1_keys)
+  //   for (var k in object2_keys)
+  //     if j == k
+  //       return true;
 
-//console.log(compare_objects({animal: "Dog", legs: 4}, {animal: "Dog", legs: 4}))
+console.log (object1_keys1);
+console.log (object1_values1);
+console.log (object2_keys2);
+console.log (object2_values2);
+
+} //If i continue this approach I would compare the 2 arrays using conditionals
+
+
+// function compare_objects(object1, object2) {
+//   for (var key1 in object1) {
+//     for (var key2 in object2) {
+//       if (object1[key1] == object2[key2]) { //if the key/value pair is equal
+//           { break ;} //break out of the loop
+//           return true; //return true, no need to check further
+//       } else if (object1[key1] !== object2[key2]) { //if the key/value pair isnt equal
+//         (object1[key1]++ && object2[key2]++);
+//         //continue;
+//       } else {
+//         return false ;
+//       } //close the else portion of the if/else statement
+//     }
+//   //return false; // close the object2 for loop
+//   } //close the object1 for loop
+// }
+
+
+//(compare_objects({animal: "Dog", legs: 4}, {animal: "Dog", legs: 4}))
+
+
+//Release 2: Generate Random Test Data
+
+// Write a function that takes an integer for length, and builds and returns an array of strings of the given length. So if we ran your function with an argument of 3, we would get an array of 3 random words back (the words don't have to be actual sensical English words -- "nnnnfph" totally counts). The words should be of randomly varying length, with a minimum of 1 letter and a maximum of 10 letters. (This involves a new trick, generating a random number, that you'll have to look up, but the solution on how to do so is relatively straightforward.)
+
+// Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
+
+ function random_data(integer) {
+  var string = ""
+
+
+ }
+
+
