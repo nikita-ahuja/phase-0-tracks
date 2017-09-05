@@ -82,52 +82,109 @@ function compare_objects(object1, object2) {
 //////////////////////////////////////////////////////////////////////////////////////
 
 // APPROACH 2
+
 function compare_objects(object1, object2) {
 
-  var object1_keys1 = new Array();
-  var object1_values1 = new Array();
+  var object1_keys1 = [];
+  var object1_values1 = [];
 
-  var object2_keys2 = new Array();
-  var object2_values2 = new Array();
+  var object2_keys2 = [];
+  var object2_values2 = [];
 
   for (var keys1 in object1) {
     var object1_keys = object1_keys1.push(keys1);
     var object1_values = object1_values1.push(object1[keys1]);
-} //close object 1 for loop
+}
 
   for (var keys2 in object2) {
     var object2_keys = object2_keys2.push(keys2);
     var object2_value = object2_values2.push(object2[keys2]);
 }
 
-  // for (var j in object1_keys)
-  //   for (var k in object2_keys)
-  //     if j == k
-  //       return true;
+  for (var i in object1_keys1) {
+    for (var j in object2_keys2) {
+      if (i == j) { // if the keys are equal
+        for (var k in object1_values1) {
+          for (var m in object2_values2) {
+            if (k == m) { //check if the values are equal
+              return true ;
+            } else {
+              k++ ;
+              m++ ;
+            }
+          }
+        }
+      } else {
+        i++ ;
+        j++ ;
+      }
+    }
+  }
+}
 
-console.log (object1_keys1);
-console.log (object1_values1);
-console.log (object2_keys2);
-console.log (object2_values2);
+// console.log (object1_keys1);
+// console.log (object1_values1);
+// console.log (object2_keys2);
+// console.log (object2_values2);
 
-} //If i continue this approach I would compare the 2 key arrays with the keys using conditionals. Then if the keys match, I would compare the same index values in the value arrays arrays using conditionals. If the keys don't match, I would move onto the next set of keys.
+//If i continue this approach I would compare the 2 key arrays with the keys using conditionals. Then if the keys match, I would compare the same index values in the value arrays arrays using conditionals. If the keys don't match, I would move onto the next set of keys.
 
 
-(compare_objects({animal: "Dog", legs: 4}, {animal: "Dog", legs: 4}))
+// console.log(compare_objects({animal: "Dog", legs: 4}, {animal: "Dog", legs: 4}))
 
 
 
 //Release 2: Generate Random Test Data
 
-// Write a function that takes an integer for length, and builds and returns an array of strings of the given length. So if we ran your function with an argument of 3, we would get an array of 3 random words back (the words don't have to be actual sensical English words -- "nnnnfph" totally counts). The words should be of randomly varying length, with a minimum of 1 letter and a maximum of 10 letters. (This involves a new trick, generating a random number, that you'll have to look up, but the solution on how to do so is relatively straightforward.)
+// Write a function that takes an integer for length, and builds and returns an array of strings of the given length. So if we ran your function with an argument of 3, we would get an array of 3 random words back (the words don't have to be actual sensical English words -- "nnnnfph" totally counts). The words should be of randomly varying length, with a minimum of 1 letter and a maximum of 10 letters.
 
 // Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result
 
- function random_data(integer) {
-  var alphabet = "abcdefghijklmnopqrstuvwxyz"
-  var string = ""
+// PSEUDOCODE:
+// We need a function that takes an integer and brings back an array of integer items.
+// Input: Integer
+// Steps:
+// 1. Generate a random word
+// - pick a random character from the alphabet between 1 and 10 times to generate the word
+// 2. Once the word is fully generated, push it into an array
+// -keep pushing words into the array until the array limit is reached
+// - the array limit is reached when amount of words in the array == integer passed into the function
+// Output: Array with the length of integer and each item is a random word
+// - array.length == integer
 
 
+ function random_string() {
+  var string = "";
+  var possible = "abcdefghijklmnopqrstuvwxyz"
+  var length = Math.floor((Math.random() * 10));
+
+  for (var i = 0; i <= length; i++) {
+    string += possible.charAt(Math.floor(Math.random()*possible.length));
+  }
+
+  return string;
+}
+
+//console.log(random_string())
+
+function random_data(integer) {
+  random_array = []
+  for (var i = 0; i<integer; i++) {
+    random_array.push(random_string());
  }
+
+ return random_array;
+}
+
+//console.log(random_data(5))
+
+
+for (var times = 0; times <=10; times++) {
+  r = (random_data(4))
+  console.log(r)
+  return_longest(r)
+}
+
+
 
 
