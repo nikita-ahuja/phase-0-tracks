@@ -140,11 +140,45 @@ function compare_objects(object1, object2) {
 
 // Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result
 
- // function random_data(integer) {
- //  var alphabet = "abcdefghijklmnopqrstuvwxyz"
- //  var string = ""
+// PSEUDOCODE:
+// We need a function that takes an integer and brings back an array of integer items.
+// Input: Integer
+// Steps:
+// 1.
+// 2.
+// 3.
+// 4.
+// 5.
+// Output: Array with the length of integer
+// - array.length == integer
 
 
- // }
+ function random_string() {
+  var string = "";
+  var possible = "abcdefghijklmnopqrstuvwxyz"
+  var length = Math.floor((Math.random() * 10) + 1);
+
+  for (var i = 0; i <= length; i++) {
+    string += possible.charAt(Math.floor(Math.random()*possible.length));
+  }
+
+  return string;
+}
+
+//console.log(random_string())
+
+function random_data(integer) {
+  random_array = []
+  for (var i = 0; i<integer; i++) {
+    random_array.push(random_string());
+ }
+
+ return random_array;
+}
+
+console.log(random_data(5))
+
+
+
 
 
