@@ -136,7 +136,7 @@ function compare_objects(object1, object2) {
 
 //Release 2: Generate Random Test Data
 
-// Write a function that takes an integer for length, and builds and returns an array of strings of the given length. So if we ran your function with an argument of 3, we would get an array of 3 random words back (the words don't have to be actual sensical English words -- "nnnnfph" totally counts). The words should be of randomly varying length, with a minimum of 1 letter and a maximum of 10 letters. (This involves a new trick, generating a random number, that you'll have to look up, but the solution on how to do so is relatively straightforward.)
+// Write a function that takes an integer for length, and builds and returns an array of strings of the given length. So if we ran your function with an argument of 3, we would get an array of 3 random words back (the words don't have to be actual sensical English words -- "nnnnfph" totally counts). The words should be of randomly varying length, with a minimum of 1 letter and a maximum of 10 letters.
 
 // Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result
 
@@ -144,19 +144,19 @@ function compare_objects(object1, object2) {
 // We need a function that takes an integer and brings back an array of integer items.
 // Input: Integer
 // Steps:
-// 1.
-// 2.
-// 3.
-// 4.
-// 5.
-// Output: Array with the length of integer
+// 1. Generate a random word
+// - pick a random character from the alphabet between 1 and 10 times to generate the word
+// 2. Once the word is fully generated, push it into an array
+// -keep pushing words into the array until the array limit is reached
+// - the array limit is reached when amount of words in the array == integer passed into the function
+// Output: Array with the length of integer and each item is a random word
 // - array.length == integer
 
 
  function random_string() {
   var string = "";
   var possible = "abcdefghijklmnopqrstuvwxyz"
-  var length = Math.floor((Math.random() * 10) + 1);
+  var length = Math.floor((Math.random() * 10));
 
   for (var i = 0; i <= length; i++) {
     string += possible.charAt(Math.floor(Math.random()*possible.length));
@@ -176,8 +176,14 @@ function random_data(integer) {
  return random_array;
 }
 
-console.log(random_data(5))
+//console.log(random_data(5))
 
+
+for (var times = 0; times <=10; times++) {
+  r = (random_data(4))
+  console.log(r)
+  return_longest(r)
+}
 
 
 
