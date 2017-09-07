@@ -1,0 +1,75 @@
+JOIN 3 TABLES
+
+Trying it out/Debugging:
+
+SELECT reviews.stars, reviews.comment, reviews.business_id FROM reviews;
+
+5|Great food|1
+2|It was okay|2
+4|Beautiful wedding|1
+
+SELECT reviews.stars, reviews.comment, reviews.business_id FROM reviews JOIN businesses ON reviews.business_id=businesses.id;
+
+5|Great food|1
+2|It was okay|2
+4|Beautiful wedding|1
+
+SELECT reviews.id, reviews.stars, reviews.comment, businesses.name FROM reviews JOIN businesses ON reviews.business_id = businesses.id;
+
+1|5|Great food|Grundy Hollow Wedding Chapel
+2|2|It was okay|Amir's Towing
+3|4|Beautiful wedding|Grundy Hollow Wedding Chapel
+
+
+SELECT
+reviews.id, reviews.stars, reviews.comment, businesses.name,
+users.first_name, users.last_name
+
+FROM reviews
+  JOIN businesses
+    ON reviews.business_id=businesses.id
+  JOIN users
+    ON reviews.user_id=users.id;
+
+1|5|Great food|Grundy Hollow Wedding Chapel|Bradford|Pitt
+2|2|It was okay|Amir's Towing|Bradford|Pitt
+3|4|Beautiful wedding|Grundy Hollow Wedding Chapel|Mandy|Kaling
+
+
+^^^SUCCESSFULLY JOINED THE 3 TABLES
+
+
+SELECT
+reviews.stars, reviews.comment,
+businesses.name,
+users.first_name, users.last_name
+
+FROM reviews
+  JOIN businesses
+    ON reviews.business_id=businesses.id
+  JOIN users
+    ON reviews.user_id=users.id;
+
+5|Great food|Grundy Hollow Wedding Chapel|Bradford|Pitt
+2|It was okay|Amir's Towing|Bradford|Pitt
+4|Beautiful wedding|Grundy Hollow Wedding Chapel|Mandy|Kaling
+
+
+#######################################
+
+
+SELECT
+reviews.stars, reviews.comment,
+businesses.name,
+users.first_name, users.last_name
+
+FROM reviews
+  JOIN businesses
+    ON reviews.business_id=businesses.id
+  JOIN users
+    ON reviews.user_id=users.id
+  WHERE businesses.name = "Grundy Hollow Wedding Chapel";
+
+5|Great food|Grundy Hollow Wedding Chapel|Bradford|Pitt
+4|Beautiful wedding|Grundy Hollow Wedding Chapel|Mandy|Kaling
+
