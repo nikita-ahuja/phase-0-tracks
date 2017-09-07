@@ -1,0 +1,101 @@
+RELEASE 2: EXECUTE SQL QUERIES
+
+SELECT * FROM albums;
+
+1|Under Pressure
+2|The Incredible True Story
+3|Everybody
+
+SELECT * FROM songs;
+
+1|Gang Related|true|1
+2|AfricAryan|true|3
+3|City of Stars|False|2
+4|Stainless|False|2
+5|Till The End|true|1
+6|Growing Pains III|false|1
+7|Anziety|true|3
+
+UPDATE songs SET title = "'Till The End" WHERE id=5;
+1|Gang Related|true|1
+2|AfricAryan|true|3
+3|City of Stars|False|2
+4|Stainless|False|2
+5|'Till The End|true|1
+6|Growing Pains III|false|1
+7|Anziety|true|3
+
+SELECT * FROM songs, albums WHERE songs.album_id = albums.id;
+
+1|Gang Related|true|1|1|Under Pressure
+2|AfricAryan|true|3|3|Everybody
+3|City of Stars|False|2|2|The Incredible True Story
+4|Stainless|False|2|2|The Incredible True Story
+5|'Till The End|true|1|1|Under Pressure
+6|Growing Pains III|false|1|1|Under Pressure
+7|Anziety|true|3|3|Everybody
+
+SELECT songs.title, albums.name FROM songs JOIN albums ON songs.album_id = albums.id;
+
+Gang Related|Under Pressure
+AfricAryan|Everybody
+City of Stars|The Incredible True Story
+Stainless|The Incredible True Story
+'Till The End|Under Pressure
+Growing Pains III|Under Pressure
+Anziety|Everybody
+
+DELETE FROM songs WHERE title = "Growing Pains III";
+SELECT * FROM songs;
+1|Gang Related|true|1
+2|AfricAryan|true|3
+3|City of Stars|False|2
+4|Stainless|False|2
+5|'Till The End|true|1
+7|Anziety|true|3
+
+RELEASE 3: RESEARCH ON YOUR OWN
+
+-Inner Join: The INNER JOIN keyword selects all rows from both tables as long as there is a match between the columns.
+
+SELECT title FROM songs INNER JOIN albums on songs.title = albums.name;
+
+Returns nothing in our case since there are no matches in the columns. In my database's case, however, it could show if there is a title track for the album since the song title would match the album name.
+
+* I tested this by adding the "Everybody" song title in the songs table and received the output "Everybody". *
+
+
+-Left Join: returns all records from the left table (table1), and the matched records from the right table (table2). The result is NULL from the right side, if there is no match.
+
+SELECT title FROM songs LEFT JOIN albums ON songs.title = albums.name
+
+Gang Related
+AfricAryan
+City of Stars
+Stainless
+'Till The End
+Anziety
+Everybody
+
+SELECT album_id FROM songs LEFT JOIN albums ON songs.album_id = albums.id;
+
+1
+3
+2
+2
+1
+3
+3
+
+
+-Right Join: returns all records from the right table (table2), and the matched records from the left table (table1). The result is NULL from the left side, when there is no match.
+
+(Currently not supported)
+
+
+-Full Outer Join: returns ALL records when there is a match in either left (table1) or right (table2) table records.
+**can potentially return very large result-sets!**
+
+(Currently not supported)
+
+
