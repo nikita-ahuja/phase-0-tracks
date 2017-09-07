@@ -56,5 +56,46 @@ SELECT * FROM songs;
 
 RELEASE 3: RESEARCH ON YOUR OWN
 
+-Inner Join: The INNER JOIN keyword selects all rows from both tables as long as there is a match between the columns.
+
+SELECT title FROM songs INNER JOIN albums on songs.title = albums.name;
+
+Returns nothing in our case since there are no matches in the columns. In my database's case, however, it could show if there is a title track for the album since the song title would match the album name.
+
+* I tested this by adding the "Everybody" song title in the songs table and received the output "Everybody". *
+
+
+-Left Join: returns all records from the left table (table1), and the matched records from the right table (table2). The result is NULL from the right side, if there is no match.
+
+SELECT title FROM songs LEFT JOIN albums ON songs.title = albums.name
+
+Gang Related
+AfricAryan
+City of Stars
+Stainless
+'Till The End
+Anziety
+Everybody
+
+SELECT album_id FROM songs LEFT JOIN albums ON songs.album_id = albums.id;
+
+1
+3
+2
+2
+1
+3
+3
+
+
+-Right Join: returns all records from the right table (table2), and the matched records from the left table (table1). The result is NULL from the left side, when there is no match.
+
+(Currently not supported)
+
+
+-Full Outer Join: returns ALL records when there is a match in either left (table1) or right (table2) table records.
+**can potentially return very large result-sets!**
+
+(Currently not supported)
 
 
