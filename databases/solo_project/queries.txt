@@ -1,0 +1,53 @@
+SELECT * FROM albums;
+
+1|Under Pressure
+2|The Incredible True Story
+3|Everybody
+
+SELECT * FROM songs;
+
+1|Gang Related|true|1
+2|AfricAryan|true|3
+3|City of Stars|False|2
+4|Stainless|False|2
+5|Till The End|true|1
+6|Growing Pains III|false|1
+7|Anziety|true|3
+
+UPDATE songs SET title = "'Till The End" WHERE id=5;
+1|Gang Related|true|1
+2|AfricAryan|true|3
+3|City of Stars|False|2
+4|Stainless|False|2
+5|'Till The End|true|1
+6|Growing Pains III|false|1
+7|Anziety|true|3
+
+SELECT * FROM songs, albums WHERE songs.album_id = albums.id;
+
+1|Gang Related|true|1|1|Under Pressure
+2|AfricAryan|true|3|3|Everybody
+3|City of Stars|False|2|2|The Incredible True Story
+4|Stainless|False|2|2|The Incredible True Story
+5|'Till The End|true|1|1|Under Pressure
+6|Growing Pains III|false|1|1|Under Pressure
+7|Anziety|true|3|3|Everybody
+
+SELECT songs.title, albums.name FROM songs JOIN albums ON songs.album_id = albums.id;
+
+Gang Related|Under Pressure
+AfricAryan|Everybody
+City of Stars|The Incredible True Story
+Stainless|The Incredible True Story
+'Till The End|Under Pressure
+Growing Pains III|Under Pressure
+Anziety|Everybody
+
+DELETE FROM songs WHERE title = "Growing Pains III";
+SELECT * FROM songs;
+1|Gang Related|true|1
+2|AfricAryan|true|3
+3|City of Stars|False|2
+4|Stainless|False|2
+5|'Till The End|true|1
+7|Anziety|true|3
