@@ -1,3 +1,5 @@
+RELEASE 2: EXECUTE SQL QUERIES
+
 SELECT * FROM albums;
 
 1|Under Pressure
@@ -51,3 +53,8 @@ SELECT * FROM songs;
 4|Stainless|False|2
 5|'Till The End|true|1
 7|Anziety|true|3
+
+RELEASE 3: RESEARCH ON YOUR OWN
+
+
+
