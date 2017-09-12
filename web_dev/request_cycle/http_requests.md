@@ -84,3 +84,6 @@ What is a cookie? How does it relate to HTTP requests?
 
 A cookie is a small piece of data the server sends to the user's web browser (i.e. the server sends info back to Chrome). Typically, it's used to tell it 2 requests ame from the SAME browser - keeping a user logged - in, for example. The browser might store this data that it was sent and then send it back with the net requests showing - hey, it's still the same person, and I'm proving it by showing you that I have the information you just sent me as proof.
 
+
+
+
