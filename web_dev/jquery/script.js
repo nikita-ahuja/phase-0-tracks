@@ -3,6 +3,6 @@ $(document).ready(function() {
     var submit_msg = $('<p>You have clicked submit!</p>');
     $('#test').append(submit_msg);
     $('button').remove();
-    //alert("Hello World!");
+    alert("Hello World!");
   });
 });
