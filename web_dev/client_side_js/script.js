@@ -19,13 +19,13 @@ function biggerText() {
 var headings = document.getElementsByTagName("h1");
 
 var heading0 = headings[0]
-heading0.addEventListener("click", biggerText);
+heading0.addEventListener("mouseover", biggerText);
 
 var heading1 = headings[1]
-heading1.addEventListener("click", biggerText);
+heading1.addEventListener("mouseover", biggerText);
 
 var heading2 = headings[2]
-heading2.addEventListener("click", biggerText);
+heading2.addEventListener("mouseover", biggerText);
 
 
 //document.getElementById("sadpizza").innerHTML="<img src = happypizza.jpg"/>";
