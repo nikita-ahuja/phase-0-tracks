@@ -57,6 +57,8 @@ end
 #   student.to_s
 # end
 
+#localhost:9393/?firstname=Dandre&lastname=Wiegand
+
 #The above was a another attempt to search students by name, but this time with a query parameter. Not successful.
 
 # get '/students/:age' do
