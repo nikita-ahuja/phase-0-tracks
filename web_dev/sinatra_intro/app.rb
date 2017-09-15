@@ -52,12 +52,12 @@ end
 
 #The above was an attempt to search students by name. Not successful.
 
-get '/students/' do
-  first_name = params[:firstname]
-  last_name = params[:lastname]
-  student = db.execute("SELECT * FROM students WHERE name=?" [first_name+" "+last_name]
-  p student.to_s
-end
+# get '/students/' do #USE QUERY PARAMETER
+#   student = db.execute("SELECT * FROM students WHERE name=?" [params[:firstname]+" "+params[:last_name]])
+#   student.to_s
+# end
+
+#The above was a another attempt to search students by name, but this time with a query parameter. Not successful.
 
 # get '/students/:age' do
 #   student = db.execute("SELECT * FROM students WHERE age=?", [params[:age]])
