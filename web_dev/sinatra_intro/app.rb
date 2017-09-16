@@ -107,3 +107,56 @@ end
 #if the student is in the database
 #select * from students where name =
 
+
+# Release 1: Research on Your Own
+
+# 1. Is sinatra the only web app library in Ruby? What are some others?
+
+# No! There are many other web application libraries accessible in Ruby. Some others include:
+
+# * Ruby on Rails
+# * Merb
+# * Nitro
+# * Volt
+# * Camping
+# * Syro
+# * Padrino
+# * Hyperloop
+# * Cuba
+# * Hobbit
+# * Hyperloop
+# * Ramaze
+# * Roda
+
+# All of these web app libraries allow your computer to act as the browser (client) and server while you’re developing a web application.
+
+# 1. Are SQLite and the sqlite3 gem your only options for using a database with Sinatra? What are some others?
+
+# Other database options with Sinatra are
+# * Datamapper
+# * Active Record (maybe used more with rails?)
+# * Sequel
+# * Mongo?
+
+# 2. What is meant by the term web stack?
+
+# A web stack is the collection of software required for Web Development. Aka, everything you need while you are developing a web app. This will generally include:
+# * an operating system (OS)
+# * a programming language... obviously
+# * a database software (sqlite3, data mapper, etc.)
+# * a Web server/framework (sinatra, rails, etc.)
+
+# Essentially, the webstack is your toolkit. It’s all the tools you will need to create your website/app. You can use a prepackaged web stack. LAMP is an example. It is actually called lamp bc of its contents:
+# * operating system (OS): Linux
+# * programming language: PHP
+# * database software: MySQL
+# * Web server: Apache
+
+# Another example is MEAN (which according to codingdojo is emerging as one of the industry’s most popular web technology stacks due to its powerful combination of JS based technologues):
+# * operating system (OS): ???
+# * programming language: Javascript
+# * database software: MongoDB
+# * Frontend Framework: AngularJS ???
+# * (Web???) server platform: Node.js
+#     * Web framework: Express.js
+
