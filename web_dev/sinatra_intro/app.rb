@@ -52,10 +52,10 @@ end
 
 #The above was an attempt to search students by name. Not successful.
 
-# get '/students/' do #USE QUERY PARAMETER
-#   student = db.execute("SELECT * FROM students WHERE name=?" [params[:firstname]+" "+params[:last_name]])
-#   student.to_s
-# end
+get '/students' do #USE QUERY PARAMETER
+  student = db.execute("SELECT * FROM students WHERE name=?" ["#{params[:firstname]} #{params[:lastname]}"])
+  student.to_s
+end
 
 #localhost:9393/?firstname=Dandre&lastname=Wiegand
 
@@ -68,10 +68,10 @@ end
 
 # The above was intended approach to search by age did not fully work (particularly with students where there are multiple students per age like 103).
 
-get '/students/age/:age' do
-  student = db.execute("SELECT * FROM students WHERE age=?", [params[:age]])
-  student.to_s
-end
+# get '/students/age/:age' do
+#   student = db.execute("SELECT * FROM students WHERE age=?", [params[:age]])
+#   student.to_s
+# end
 
 #the approach above totally worked and can't completely understand why...
 
